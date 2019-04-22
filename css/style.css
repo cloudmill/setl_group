@@ -1,0 +1,1239 @@
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('../fonts/ApercuPro-Medium.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('../fonts/ApercuPro-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Spectral';
+  src: url('../fonts/Spectral-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Spectral';
+  src: url('../fonts/Spectral-MediumItalic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+.wrapper * {
+  outline: none;
+}
+.wrapper a {
+  text-decoration: none;
+}
+.wrapper .content {
+  width: 1240px;
+  margin: auto;
+}
+.wrapper ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+.wrapper header {
+  width: 100%;
+  padding: 40px 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrapper header.black .content .logo {
+  background-image: url(../images/setl_group_logo_black.png);
+}
+.wrapper header.black .content .menu_list ul li a {
+  color: #232323;
+}
+.wrapper header.black .content .search {
+  background-image: url(../images/search_black.png);
+}
+.wrapper header.black .content .lang a {
+  color: #232323;
+}
+.wrapper header.black .content .popup_menu a.menu_open {
+  color: #232323;
+}
+.wrapper header.black .content .popup_menu a.menu_open:before,
+.wrapper header.black .content .popup_menu a.menu_open:after {
+  background-color: #232323;
+}
+.wrapper header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper header .content .logo {
+  display: block;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 100%;
+  min-width: 120px;
+  width: 120px;
+  height: 50px;
+  margin-right: 80px;
+}
+.wrapper header .content .menu_list {
+  margin-right: 200px;
+}
+.wrapper header .content .menu_list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper header .content .menu_list ul li {
+  flex-basis: calc(50% - 10px);
+  width: 210px;
+  margin-right: 10px;
+}
+.wrapper header .content .menu_list ul li a {
+  color: #ffffff;
+  font-family: 'Apercu Pro';
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.wrapper header .content .search {
+  display: flex;
+  align-items: center;
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  margin-right: 120px;
+  background-image: url(../images/search.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 100%;
+}
+.wrapper header .content .lang {
+  display: flex;
+  margin-right: 120px;
+  align-items: center;
+}
+.wrapper header .content .lang a {
+  margin-right: 24px;
+  padding-bottom: 5px;
+  color: #ffffff;
+  font-family: 'Apercu Pro';
+  font-size: 15px;
+  font-weight: 400;
+}
+.wrapper header .content .lang a.active {
+  border-bottom: 3px solid #ea0013;
+}
+.wrapper header .content .popup_menu {
+  display: flex;
+  align-items: center;
+}
+.wrapper header .content .popup_menu a.menu_open {
+  color: #ffffff;
+  font-family: 'Apercu Pro';
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.wrapper header .content .popup_menu a.menu_open:before {
+  content: '';
+  display: block;
+  margin-right: 15px;
+  height: 2px;
+  width: 27px;
+  margin-top: 7px;
+  background-color: #fff;
+}
+.wrapper header .content .popup_menu a.menu_open:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 27px;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -2.5px);
+  background-color: #fff;
+}
+.wrapper section.main_banner {
+  background-size: auto 100%;
+  height: 750px;
+  position: relative;
+  margin-bottom: 120px;
+}
+.wrapper section.main_banner .content .slide-count {
+  position: absolute;
+  top: 210px;
+  height: 265px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper section.main_banner .content .slide-count p {
+  color: #ffffff;
+  font-family: 'Apercu Pro';
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 5.04px;
+  order: 2;
+  text-align: center;
+}
+.wrapper section.main_banner .content .slide-count p.current {
+  padding-bottom: 5px;
+  order: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper section.main_banner .content .slide-count p.current::after {
+  content: '';
+  display: block;
+  width: 17px;
+  margin-top: 4px;
+  height: 3px;
+  background-color: #ea0013;
+  margin-right: 3px;
+}
+.wrapper section.main_banner .content .slide-count:before {
+  content: '';
+  display: block;
+  order: 1;
+  width: 2px;
+  height: 184px;
+  background-color: #ffffff;
+  opacity: 0.7;
+}
+.wrapper section.main_banner .content .str_down {
+  display: block;
+  width: 12px;
+  height: 126px;
+  position: absolute;
+  z-index: 10;
+  bottom: 45px;
+  margin-left: 9px;
+  cursor: pointer;
+  background-image: url(../images/str_white_down.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.wrapper section.main_banner .slider {
+  width: 100%;
+  height: 100%;
+}
+.wrapper section.main_banner .slider .item {
+  overflow: hidden;
+}
+.wrapper section.main_banner .slider .item .content .text {
+  width: 695px;
+  margin-left: 200px;
+  padding-top: 210px;
+}
+.wrapper section.main_banner .slider .item .content .text h1 {
+  color: #ffffff;
+  font-family: 'Apercu Pro';
+  font-size: 90px;
+  margin: 0;
+  font-weight: 500;
+  line-height: 100.01px;
+}
+.wrapper section.main_banner .slider .item .content .text h4 {
+  width: 560px;
+  color: #ffffff;
+  font-family: 'Spectral';
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40.01px;
+}
+.wrapper section.main_banner .slider .item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+.wrapper section.main_banner .slider .slick-next,
+.wrapper section.main_banner .slider .slick-prev {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  border-radius: 0;
+  background-image: url(../images/str.png);
+  width: 99px;
+  height: 17px;
+  position: absolute;
+  cursor: pointer;
+  right: 50%;
+  top: 227px;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate(620px, 0);
+  z-index: 3;
+}
+.wrapper section.main_banner .slider .slick-next:hover,
+.wrapper section.main_banner .slider .slick-prev:hover {
+  margin-right: -10px;
+}
+.wrapper section.main_banner .slider .slick-prev {
+  transform: rotate(180deg) translate(-565px, 0);
+  top: 274px;
+}
+.wrapper section.main_banner .slider .slick-prev:hover {
+  margin-right: 10px;
+}
+.wrapper section.main_banner a.projects {
+  position: absolute;
+  right: 0;
+  padding-left: 100px;
+  width: calc(50% - 300px);
+  height: 280px;
+  padding-top: 70px;
+  bottom: -80px;
+  color: #ffffff;
+  font-family: 'Apercu Pro';
+  font-size: 40px;
+  font-weight: 500;
+  background-image: url(../images/house-line.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: calc(100% - 56px) calc(100% - 65px);
+  background-color: #ea0013;
+}
+.wrapper section.main_banner a.projects .str {
+  top: 50%;
+  margin-top: 30px;
+  left: 100px;
+}
+.wrapper section.news_main {
+  overflow: hidden;
+}
+.wrapper section.news_main .content > h3 {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 200px;
+  margin-bottom: 80px;
+  position: relative;
+}
+.wrapper section.news_main .content > h3:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -100px;
+  transform: translate(-100%, -50%);
+  top: 50%;
+  width: 517px;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+.wrapper section.news_main .content .block {
+  display: flex;
+}
+.wrapper section.news_main .content .block > div {
+  width: 50%;
+}
+.wrapper section.news_main .content .block .left {
+  position: relative;
+}
+.wrapper section.news_main .content .block .left .small_figure {
+  z-index: -2;
+  left: 0;
+  top: 0;
+}
+.wrapper section.news_main .content .block .left .big_figure {
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+}
+.wrapper section.news_main .content .block .left a.img {
+  margin-left: 200px;
+  display: block;
+  width: calc(100% - 300px);
+  height: calc(100% - 185px);
+  padding: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.wrapper section.news_main .content .block .left a.img img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+.wrapper section.news_main .content .block .left a.img p {
+  color: #ffffff;
+  font-family: "Apercu Pro";
+}
+.wrapper section.news_main .content .block .left a.img p.one {
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 0;
+  margin-right: 20px;
+  font-weight: 500;
+}
+.wrapper section.news_main .content .block .left a.img p.two {
+  font-family: 'Spectral';
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.wrapper section.news_main .content .block .left a.img p.date {
+  color: #ffffff;
+  font-family: "Spectral";
+  font-size: 12px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 12px;
+  font-style: italic;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+.wrapper section.news_main .content .block .left a.img .str {
+  bottom: 50px;
+  right: 50px;
+}
+.wrapper section.news_main .content .block .right {
+  padding-left: 100px;
+}
+.wrapper section.news_main .content .block .right a.item {
+  text-decoration: none;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 25px;
+  display: block;
+}
+.wrapper section.news_main .content .block .right a.item:first-child + a {
+  border: none;
+  position: relative;
+  margin-bottom: 80px;
+}
+.wrapper section.news_main .content .block .right a.item:first-child + a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1000px;
+  height: 1px;
+  background-color: #ea0013;
+  left: 0;
+  bottom: -13px;
+}
+.wrapper section.news_main .content .block .right a.item p {
+  color: #232323;
+  font-family: "Apercu Pro";
+  max-width: 440px;
+}
+.wrapper section.news_main .content .block .right a.item p.one {
+  font-size: 20px;
+  font-weight: 500;
+}
+.wrapper section.news_main .content .block .right a.item p.two {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.wrapper section.news_main .content .block .right a.item p.date {
+  font-family: "Spectral";
+  font-size: 13px;
+  font-weight: 400;
+  color: #b3b3b3;
+  line-height: 22px;
+  font-style: italic;
+}
+.wrapper section.news_main .content .block .right a.all {
+  color: #232323;
+  text-decoration: none;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 3px;
+}
+.wrapper section.news_main .content .block.news_page {
+  margin-left: 200px;
+}
+.wrapper section.news_main .content .block.news_page .right a:first-child + a {
+  border-bottom: 1px solid #e5e5e5;
+  position: unset;
+  margin-bottom: 25px;
+}
+.wrapper section.news_main .content .block.news_page .right a:first-child + a:before {
+  content: none;
+}
+.wrapper section.news_main .content .block.news_page .left .big_figure {
+  top: 45%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+.wrapper section.news_main .content .block.news_page .left a.img {
+  margin-left: 0;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  transform: translate(0, -25px);
+}
+.wrapper section.news_main .content .list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 200px;
+  justify-content: space-between;
+}
+.wrapper section.news_main .content .list a.item {
+  flex-basis: calc((100% - 100px)/2);
+  text-decoration: none;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 25px;
+  display: block;
+}
+.wrapper section.news_main .content .list a.item p {
+  color: #232323;
+  font-family: "Apercu Pro";
+}
+.wrapper section.news_main .content .list a.item p.one {
+  font-size: 20px;
+  font-weight: 500;
+}
+.wrapper section.news_main .content .list a.item p.two {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.wrapper section.news_main .content .list a.item p.date {
+  font-family: "Spectral";
+  font-size: 13px;
+  font-weight: 400;
+  color: #b3b3b3;
+  line-height: 22px;
+  font-style: italic;
+}
+.wrapper section.news_main .content .form_news {
+  width: 50%;
+  margin-left: 50%;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+.wrapper section.news_main .content .form_news form {
+  position: relative;
+}
+.wrapper section.news_main .content .form_news form p {
+  color: #232323;
+  font-family: 'Spectral';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.wrapper section.news_main .content .form_news form label {
+  font-family: "Apercu Pro";
+  position: absolute;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ea0013;
+  left: 115px;
+  bottom: 20px;
+  display: none;
+}
+.wrapper section.news_main .content .form_news form input {
+  color: #939393;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 400;
+  color: #232323;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 0;
+  padding-right: 100px;
+  display: block;
+  width: calc(100% - 100px);
+}
+.wrapper section.news_main .content .form_news form input:placeholder-shown + label {
+  display: block;
+}
+.wrapper section.news_main .content .form_news form button {
+  position: absolute;
+  bottom: 13px;
+  border: 0;
+  right: 0;
+}
+.wrapper section.news_main .content .navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  margin-left: 200px;
+  margin-bottom: 80px;
+}
+.wrapper section.news_main .content .navigation .str {
+  position: unset;
+}
+.wrapper section.news_main .content .navigation .str.left {
+  margin-right: 42px;
+  transform: rotate(180deg);
+  filter: invert(2);
+  opacity: 0.5;
+}
+.wrapper section.news_main .content .navigation .str.right {
+  margin-left: 25px;
+}
+.wrapper section.news_main .content .navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper section.news_main .content .navigation ul li {
+  width: 55px;
+  height: 55px;
+  border: 1px solid transparent;
+  margin-right: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper section.news_main .content .navigation ul li.active {
+  border: 1px solid #ea0013;
+}
+.wrapper section.news_main .content .navigation ul li.active a {
+  color: #ea0013;
+}
+.wrapper section.news_main .content .navigation ul li a {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 20px;
+  font-weight: 400;
+}
+.wrapper section.created_company .content {
+  position: relative;
+  margin-bottom: 140px;
+}
+.wrapper section.created_company .content p.sect-title {
+  margin-top: 0;
+  transform: translate(0, -30px);
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 90px;
+  font-weight: 500;
+  width: 450px;
+  margin-left: 80px;
+  line-height: 100.01px;
+}
+.wrapper section.created_company .content .img_year {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  width: 963px;
+  z-index: -1;
+  height: 279px;
+  background-image: url(../images/1994.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.wrapper section.created_company .content .block {
+  height: 550px;
+  display: flex;
+}
+.wrapper section.created_company .content .block div {
+  width: 50%;
+  height: calc(100% - 150px);
+  padding: 75px;
+  padding-right: 0;
+  background-size: cover;
+  background-position: center bottom;
+}
+.wrapper section.created_company .content .block div.left {
+  background-image: url(../images/created_1.png);
+}
+.wrapper section.created_company .content .block div.left p.two {
+  margin-right: 150px;
+}
+.wrapper section.created_company .content .block div.right {
+  background-image: url(../images/created_2.png);
+  position: relative;
+  bottom: 100px;
+}
+.wrapper section.created_company .content .block div.right:before {
+  content: '';
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  position: absolute;
+  background-image: url(../images/light_red.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.wrapper section.created_company .content .block div.right p {
+  position: relative;
+  z-index: 3;
+}
+.wrapper section.created_company .content .block div.right p.two {
+  margin-right: 60px;
+}
+.wrapper section.created_company .content .block div p {
+  margin: 0;
+}
+.wrapper section.created_company .content .block div p.one {
+  color: #ffffff;
+  font-family: "Apercu Pro";
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 100.01px;
+  margin-bottom: 40px;
+}
+.wrapper section.created_company .content .block div p.two {
+  color: #ffffff;
+  font-family: Spectral;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.wrapper section.created_company .content .big_figure {
+  bottom: -75px;
+  right: -130px;
+  z-index: -1;
+}
+.wrapper section.companies .content p.title {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 70px;
+  margin-top: 0;
+}
+.wrapper section.companies .content .block {
+  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  border-bottom: 0;
+}
+.wrapper section.companies .content .block:before,
+.wrapper section.companies .content .block:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #e0e0e0;
+  position: absolute;
+  left: 33.33%;
+  top: 0;
+}
+.wrapper section.companies .content .block:after {
+  left: 66.66%;
+}
+.wrapper section.companies .content .block .item {
+  width: calc(100% / 3);
+  border-bottom: 1px solid #e0e0e0;
+  height: 225px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper section.companies .content .block .item.about {
+  background: #f6f6f6;
+  position: relative;
+  justify-content: flex-start;
+}
+.wrapper section.companies .content .block .item.about p {
+  color: #232323;
+  margin-top: 0;
+  font-family: "Apercu Pro";
+  font-size: 25px;
+  font-weight: 500;
+  margin-left: 30%;
+  max-width: 132px;
+}
+.wrapper section.companies .content .block .item.about .str {
+  bottom: 60px;
+  left: 30%;
+}
+.wrapper section.companies .content .block .item img {
+  max-width: 95%;
+  max-height: 95%;
+}
+.wrapper section.page_title {
+  margin-top: 200px;
+}
+.wrapper section.page_title .content p.title {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 100.02px;
+  margin-top: 0;
+  position: relative;
+}
+.wrapper section.page_title .content p.title:before {
+  content: '';
+  width: 100%;
+  right: 100%;
+  margin-right: 57px;
+  display: block;
+  height: 1px;
+  background-color: #ea0013;
+  position: absolute;
+  top: 57px;
+}
+.wrapper section.page_title .content ul.sub_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.wrapper section.page_title .content ul.sub_menu li {
+  position: relative;
+  cursor: pointer;
+}
+.wrapper section.page_title .content ul.sub_menu li.active {
+  cursor: default;
+}
+.wrapper section.page_title .content ul.sub_menu li.active:before {
+  width: 41px;
+}
+.wrapper section.page_title .content ul.sub_menu li.active a {
+  color: #ea0013;
+}
+.wrapper section.page_title .content ul.sub_menu li:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #ea0013;
+  position: absolute;
+  bottom: 0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  left: 0;
+}
+.wrapper section.page_title .content ul.sub_menu li:hover:before {
+  width: 41px;
+}
+.wrapper section.page_title .content ul.sub_menu li:hover a {
+  color: #ea0013;
+}
+.wrapper section.page_title .content ul.sub_menu li a {
+  color: #232323;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40.01px;
+}
+.wrapper section.fin_report .content p.title {
+  color: #232323;
+  font-family: Spectral;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 46.01px;
+}
+.wrapper section.fin_report .content .block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  justify-content: space-between;
+}
+.wrapper section.fin_report .content .block .item {
+  height: 113px;
+  display: block;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  position: relative;
+  margin-bottom: 20px;
+  flex-basis: calc((100% - 40px)/2);
+}
+.wrapper section.fin_report .content .block .item:before {
+  content: '';
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 11px;
+  height: 11px;
+  background-image: url(../images/reqtangle_red.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.wrapper section.fin_report .content .block .item p {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-left: 30px;
+}
+.wrapper section.fin_report .content .block .item p.type {
+  color: #ea0013;
+  font-family: "Apercu Pro";
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 11px;
+  letter-spacing: 5.2px;
+  margin: 0;
+  position: absolute;
+  bottom: 27px;
+  left: 30px;
+}
+.wrapper section.fin_report .content .block .item p.type span {
+  color: #8a8989;
+  margin-left: 16px;
+  font-family: "Apercu Pro";
+  font-size: 13px;
+  font-weight: 400;
+}
+.wrapper section.fin_report .content .block .item .str {
+  bottom: 27px;
+  right: 30px;
+}
+.wrapper section.block_text {
+  margin-bottom: 100px;
+}
+.wrapper section.block_text .content p.title {
+  color: #232323;
+  font-family: Spectral;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 46.01px;
+  max-width: 525px;
+  margin-bottom: 20px;
+}
+.wrapper section.block_text .content a.red {
+  color: #ea0013;
+  font-family: "Apercu Pro";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.wrapper section.inf_rating {
+  margin-bottom: 70px;
+}
+.wrapper section.inf_rating .content .item {
+  display: flex;
+  border: 1px solid #dddddd;
+  margin-bottom: 20px;
+}
+.wrapper section.inf_rating .content .item .img {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px;
+  flex-basis: 310px;
+  border-right: 1px solid #dddddd;
+  background-color: #f7f7f7;
+}
+.wrapper section.inf_rating .content .item .img img {
+  max-width: 215px;
+  height: auto;
+}
+.wrapper section.inf_rating .content .item .img p {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 2.4px;
+}
+.wrapper section.inf_rating .content .item .img p:before {
+  content: '-';
+  margin-right: 15px;
+}
+.wrapper section.inf_rating .content .item .right {
+  flex-basis: 930px;
+  padding: 40px 55px;
+}
+.wrapper section.inf_rating .content .item .right p.one {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 0;
+}
+.wrapper section.inf_rating .content .item .right p.two {
+  color: #232323;
+  font-family: Spectral;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.wrapper section.inf_rating .content .item .right p.date {
+  color: #b3b3b3;
+  font-family: "Spectral";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 0;
+}
+.wrapper section.indicators {
+  margin-bottom: 130px;
+}
+.wrapper section.indicators .content {
+  position: relative;
+}
+.wrapper section.indicators .content p.titile {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 100.02px;
+}
+.wrapper section.indicators .content .block {
+  display: flex;
+}
+.wrapper section.indicators .content .block table.titles {
+  width: 414px;
+}
+.wrapper section.indicators .content .block table.titles tr {
+  height: 61px;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.wrapper section.indicators .content .block table.titles tr:first-child {
+  background-color: transparent;
+}
+.wrapper section.indicators .content .block table.titles tr td {
+  color: #232323;
+  font-family: "Apercu Pro";
+  margin-right: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: 30px;
+  text-align: right;
+}
+.wrapper section.indicators .content .block .slider {
+  width: 830px;
+  justify-content: space-between;
+  display: flex !important;
+}
+.wrapper section.indicators .content .block .slider ul {
+  display: flex;
+  max-width: 210px;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper section.indicators .content .block .slider ul li {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 15px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  line-height: 24px;
+  height: 61px;
+}
+.wrapper section.indicators .content .block .slider ul li:first-child {
+  color: #ea0013;
+  font-size: 25px;
+  font-weight: 700;
+}
+.wrapper section.indicators .content .block .slider .slick-next,
+.wrapper section.indicators .content .block .slider .slick-prev {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  border-radius: 0;
+  background-image: url(../images/str_black.png);
+  width: 48px;
+  height: 11px;
+  position: absolute;
+  cursor: pointer;
+  top: 22px;
+  right: 0;
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 3;
+}
+.wrapper section.indicators .content .block .slider .slick-next:hover,
+.wrapper section.indicators .content .block .slider .slick-prev:hover {
+  margin-right: -10px;
+}
+.wrapper section.indicators .content .block .slider .slick-list {
+  width: 100%;
+}
+.wrapper section.indicators .content .block .slider .slick-prev {
+  left: 0;
+  margin-top: 2px;
+  transform: rotate(180deg);
+}
+.wrapper section.indicators .content .block .slider .slick-prev:hover {
+  margin-left: -10px;
+}
+.wrapper section.indicators .content .block .progress_slide {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  height: 4px;
+  background-color: #f0f0f0;
+}
+.wrapper section.indicators .content .block .progress_slide span {
+  display: block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  width: 0;
+  height: 4px;
+  background-color: #ea0013;
+}
+.wrapper footer {
+  overflow: hidden;
+}
+.wrapper footer .content {
+  position: relative;
+  background-color: #282828;
+}
+.wrapper footer .content:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 100%;
+  background-color: #282828;
+}
+.wrapper footer .content:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: -17px;
+  height: 100%;
+  padding-bottom: 45px;
+  background-image: url(../images/big_figure_black.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.wrapper footer .content .block {
+  padding-top: 115px;
+  padding-bottom: 40px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  z-index: 3;
+}
+.wrapper footer .content .block .col {
+  flex-basis: 280px;
+}
+.wrapper footer .content .block .col:last-child a.white {
+  margin-left: 55px;
+}
+.wrapper footer .content .block .col a {
+  display: block;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+.wrapper footer .content .block .col a.white {
+  color: #ffffff;
+  font-family: "Apercu Pro";
+  font-size: 17px;
+  font-weight: 500;
+}
+.wrapper footer .content .block .col a.phone {
+  color: #f5001d;
+  font-family: "Apercu Pro";
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.wrapper footer .content .block .col a.copyright {
+  color: #ffffff6b;
+  font-family: "Apercu Pro";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 35px;
+  margin-top: 142px;
+  display: flex;
+  align-items: center;
+}
+.wrapper footer .content .block .col a.copyright img {
+  margin-left: 10px;
+}
+.wrapper footer .content .block .col ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.wrapper footer .content .block .col ul li a {
+  opacity: 0.4;
+  color: #ffffff;
+  font-family: "Apercu Pro";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-bottom: 20px;
+}
+.wrapper footer .content .up {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  right: 0;
+  transform: translate(50%, 0);
+  width: 100px;
+  height: 161px;
+  background-color: #f5001d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper footer .content .up .str {
+  position: unset;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+}
+.small_figure {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-image: url(../images/small_figure.png);
+}
+.big_figure {
+  width: 334px;
+  height: 335px;
+  position: absolute;
+  background-image: url(../images/big_figure.png);
+}
+.str {
+  position: absolute;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 18px;
+}
+.str.white {
+  background-image: url(../images/str.png);
+}
+.str.red {
+  background-image: url(../images/str_red.png);
+  height: 23px;
+}
+.str.black {
+  background-image: url(../images/str_black.png);
+  width: 48px;
+  height: 11px;
+}

@@ -1,0 +1,1315 @@
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('../fonts/ApercuPro-Medium.otf');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('../fonts/ApercuPro-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Spectral';
+    src: url('../fonts/Spectral-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Spectral';
+    src: url('../fonts/Spectral-MediumItalic.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+@font: 'Apercu Pro';
+@font_spec: 'Spectral';
+@ta: 0.3s;
+@cb: cubic-bezier(0.215, 0.610, 0.355, 1);
+@anim: @ta @cb;
+
+.wrapper{
+    *{
+        outline: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .content{
+        width: 1240px;
+        margin: auto;
+    }
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}
+body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+.wrapper{
+    header{
+        width: 100%;
+        padding: 40px 0;
+        z-index: 2;
+        position: absolute;
+        top:0;
+        left: 0;
+        &.black{
+            .content{
+                .logo{
+                    background-image: url(../images/setl_group_logo_black.png);
+                }
+                .menu_list{
+                    ul{
+                        li{
+                            a{
+                                color: #232323;
+                            }
+                        }
+                    }
+                }
+                .search{
+                    background-image: url(../images/search_black.png);
+                }
+                .lang{
+                    a{
+                        color: #232323; 
+                    }
+                }
+                .popup_menu{
+                    a.menu_open{
+                        color: #232323;
+                        &:before,&:after{
+                            background-color: #232323;
+                        }
+                    }
+                }
+            }
+        }
+        .content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logo{
+                display: block;
+                background-image: url(../images/logo.png);
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: 100% 100%;
+                min-width: 120px;
+                width: 120px;
+                height: 50px;
+                margin-right: 80px;
+            }
+            .menu_list{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    li{
+                        flex-basis: ~"calc(50% - 10px)";
+                        width: 210px;
+                        margin-right: 10px;
+                        a{
+                            color: #ffffff;
+                            font-family: @font;
+                            font-size: 17px;
+                            font-weight: 400;
+                            line-height: 30px;
+                        }
+                    }
+                }
+                margin-right: 200px;
+            }
+            .search{
+                display: flex;
+                align-items: center;
+                width: 17px;
+                height: 17px;
+                min-width: 17px;
+                margin-right: 120px;
+                background-image: url(../images/search.png);
+                background-repeat: no-repeat;
+                background-position: top left;
+                background-size: 100% 100%;
+            }
+            .lang{
+                display: flex;
+                margin-right: 120px;
+                align-items: center;
+                a{
+                    margin-right: 24px;
+                    padding-bottom: 5px;
+                    color: #ffffff;
+                    font-family: @font;
+                    font-size: 15px;
+                    font-weight: 400;
+                    &.active{
+                        border-bottom: 3px solid #ea0013;
+                    }
+                }
+            }
+            .popup_menu{
+                display: flex;
+                align-items: center;
+                a.menu_open{
+                    color: #ffffff;
+                    font-family: @font;
+                    font-size: 15px;
+                    font-weight: 400;
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                    &:before{
+                        content: '';
+                        display: block;
+                        margin-right: 15px;
+                        height: 2px;
+                        width: 27px;
+                        margin-top: 7px;
+                        background-color: #fff;
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        width: 27px;
+                        left: 0;
+                        top: 50%;
+                        transform: translate(0,-2.5px);
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+        
+    }
+    section{
+        &.main_banner{
+            background-size: auto 100%;
+            height: 750px;
+            position: relative;
+            margin-bottom: 120px;
+            .content{
+                .slide-count{
+                    position: absolute;
+                    top: 210px;
+                    height: 265px;
+                    z-index: 2;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    p{
+                        color: #ffffff;
+                        font-family: @font;
+                        font-size: 18px;
+                        margin: 0;
+                        font-weight: 400;
+                        letter-spacing: 5.04px;
+                        order: 2;
+                        text-align: center;
+                        &.current{
+                            padding-bottom: 5px;
+                            order: 0;
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            &::after{
+                                content: '';
+                                display: block;
+                                width: 17px;
+                                margin-top: 4px;
+                                height: 3px;
+                                background-color: #ea0013;
+                                margin-right: 3px;
+                            }
+                        }
+                    }
+                    &:before{
+                        content: '';
+                        display: block;
+                        order:1;
+                        width: 2px;
+                        height: 184px;
+                        background-color: #ffffff;
+                        opacity: 0.7;
+                    }
+                }
+                .str_down{
+                    display: block;
+                    width: 12px;
+                    height: 126px;
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 45px;
+                    margin-left: 9px;
+                    cursor: pointer;
+                    background-image: url(../images/str_white_down.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+            .slider{
+                width: 100%;
+                height: 100%;
+                .item{
+                    overflow: hidden;
+                    .content{
+                        .text{
+                            width: 695px;
+                            margin-left: 200px;
+                            padding-top: 210px;
+                            h1{
+                                color: #ffffff;
+                                font-family: @font;
+                                font-size: 90px;
+                                margin: 0;
+                                font-weight: 500;
+                                line-height: 100.01px;
+                            }
+                            h4{
+                                width: 560px;
+                                color: #ffffff;
+                                font-family: @font_spec;
+                                margin-top: 20px;
+                                font-size: 30px;
+                                font-weight: 500;
+                                line-height: 40.01px;
+                            }
+                        }
+                        
+                    }
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        min-width: 100%;
+                        min-height: 100%;
+                        width: 100%;
+                        z-index: -2;
+                    }
+                }
+                .slick-next,.slick-prev{
+                    background-color: transparent;
+                    border: 0;
+                    color: transparent;
+                    border-radius: 0;
+                    background-image: url(../images/str.png);
+                    width: 99px;
+                    height: 17px;
+                    position: absolute;
+                    cursor: pointer;
+                    right: 50%;
+                    top: 227px;
+                    transition: all @anim;
+                    transform: translate(620px,0);
+                    z-index: 3;
+                    &:hover{
+                        margin-right: -10px;
+                    }
+                }
+                .slick-prev{
+                    transform: rotate(180deg) translate(-565px,0);
+                    top: 274px;
+                    &:hover{
+                        margin-right: 10px;
+                    }
+                }
+            }
+            a.projects{
+                position: absolute;
+                right: 0;
+                padding-left: 100px;
+                width: ~'calc(50% - 300px)';
+                height: 280px;
+                padding-top: 70px;
+                bottom: -80px;
+                color: #ffffff;
+                font-family: @font;
+                font-size: 40px;
+                font-weight: 500;
+                background-image: url(../images/house-line.png);
+                background-position: bottom right;
+                background-repeat: no-repeat;
+                background-size: ~'calc(100% - 56px)' ~'calc(100% - 65px)';
+                background-color: #ea0013;
+                .str{
+                    top: 50%;
+                    margin-top: 30px;
+                    left: 100px;
+                }
+            }
+        }
+        &.news_main{
+            overflow: hidden;
+            .content{
+                >h3{
+                    color: #232323;
+                    font-family: "Apercu Pro";
+                    font-size: 30px;
+                    font-weight: 500;
+                    margin-left: 200px;
+                    margin-bottom: 80px;
+                    position: relative;
+                    &:before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: -100px;
+                        transform: translate(-100%,-50%);
+                        top: 50%;
+                        width: 517px;
+                        height: 1px;
+                        background-color: #e5e5e5;
+                    }
+                }
+                .block{
+                    display: flex;
+                    >div{
+                        width: 50%;
+                    }
+                    .left{
+                        position: relative;
+                        .small_figure{
+                            z-index: -2;
+                            left: 0;
+                            top: 0;
+                        }
+                        .big_figure{
+                            bottom: 0;
+                            left: 0;
+                            z-index: -2;
+                        }
+                        a.img{
+                            margin-left: 200px;
+                            display: block;
+                            width: ~'calc(100% - 300px)';
+                            height: ~'calc(100% - 185px)';
+                            padding: 50px;
+                            overflow: hidden;
+                            position: relative;
+                            img{
+                                position: absolute;
+                                z-index: -1;
+                                top: 0;
+                                left: 0;
+                                min-width: 100%;
+                                width: 100%;
+                                height: auto;
+                                min-height: 100%;
+                            }
+                            p{
+                                color: #ffffff;
+                                font-family: "Apercu Pro";
+                                &.one{
+                                    font-size: 20px;
+                                    line-height: 25px;
+                                    margin-top: 0;
+                                    margin-right: 20px;
+                                    font-weight: 500;
+                                }
+                                &.two{
+                                    font-family: @font_spec;
+                                    font-size: 15px;
+                                    font-weight: 500;
+                                    line-height: 22px;
+                                }
+                                &.date{
+                                    color: #ffffff;
+                                    font-family: "Spectral";
+                                    font-size: 12px;
+                                    margin: 0;
+                                    font-weight: 400;
+                                    line-height: 12px;
+                                    font-style: italic;
+                                    position: absolute;
+                                    bottom: 50px;
+                                    left: 50px;
+                                }
+                            }
+                            .str{
+                                bottom: 50px;
+                                right: 50px;
+                            }
+                        }
+                    }
+                    .right{
+                        padding-left: 100px;
+                        a{
+                            &.item{
+                                text-decoration: none;
+                                border-bottom: 1px solid #e5e5e5;
+                                margin-bottom: 25px;
+                                display: block;
+                                &:first-child+a{
+                                    border:none;
+                                    position: relative;
+                                    margin-bottom: 80px;
+                                    &:before{
+                                        content: '';
+                                        display: block;
+                                        position: absolute;
+                                        width: 1000px;
+                                        height: 1px;
+                                        background-color: #ea0013;
+                                        left: 0;
+                                        bottom: -13px;
+                                    }
+                                }
+                                p{
+                                    color: #232323;
+                                    font-family: "Apercu Pro";
+                                    max-width: 440px;
+                                    &.one{
+                                        font-size: 20px;
+                                        font-weight: 500;
+                                    }
+                                    &.two{
+                                        font-size: 15px;
+                                        font-weight: 500;
+                                        line-height: 22px;
+                                    }
+                                    &.date{
+                                        font-family: "Spectral";
+                                        font-size: 13px;
+                                        font-weight: 400;
+                                        color: #b3b3b3;
+                                        line-height: 22px;
+                                        font-style: italic;
+                                    }
+                                }
+                            }
+                            &.all{
+                                color: #232323;
+                                text-decoration: none;
+                                font-family: "Apercu Pro";
+                                font-size: 16px;
+                                font-weight: 500;
+                                border-bottom: 1px solid #e0e0e0;
+                                padding-bottom: 3px;
+                            }
+                        }
+                    }
+                    &.news_page{
+                        margin-left: 200px;
+                        .right{
+                            a{
+                                &:first-child+a{
+                                    border-bottom: 1px solid #e5e5e5;
+                                    position: unset;
+                                    margin-bottom: 25px;
+                                    &:before{
+                                        content: none;
+                                    }
+                                }
+                            }
+                        }
+                        .left{
+                            .big_figure{
+                                top: 45%;
+                                bottom: auto;
+                                transform: translate(-50%,-50%);
+                                z-index: -2;
+                            }
+                            a.img{
+                                margin-left: 0;
+                                width: ~'calc(100% - 100px)';
+                                height: ~'calc(100% - 100px)';
+                                transform: translate(0,-25px);
+                            }
+                        }
+                    }
+                }
+                .list{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: 200px;
+                    justify-content: space-between;
+                    a.item{
+                        flex-basis: ~"calc((100% - 100px)/2)";
+                        text-decoration: none;
+                        border-bottom: 1px solid #e5e5e5;
+                        margin-bottom: 25px;
+                        display: block;
+                        p{
+                            color: #232323;
+                            font-family: "Apercu Pro";
+                            &.one{
+                                font-size: 20px;
+                                font-weight: 500;
+                            }
+                            &.two{
+                                font-size: 15px;
+                                font-weight: 500;
+                                line-height: 22px;
+                            }
+                            &.date{
+                                font-family: "Spectral";
+                                font-size: 13px;
+                                font-weight: 400;
+                                color: #b3b3b3;
+                                line-height: 22px;
+                                font-style: italic;
+                            }
+                        }
+                    }
+                }
+                .form_news{
+                    width: 50%;
+                    margin-left: 50%;
+                    padding-left: 50px;
+                    margin-top: 50px;
+                    form{
+                        position: relative;
+                        p{
+                            color: #232323;
+                            font-family: 'Spectral';
+                            font-size: 20px;
+                            font-weight: 500;
+                            line-height: 30px;
+                        }
+                        label{
+                            font-family: "Apercu Pro";
+                            position: absolute;
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: #ea0013;
+                            left: 115px;
+                            bottom: 20px;
+                            display: none;
+                        }
+                        input{
+                            color: #939393;
+                            font-family: "Apercu Pro";
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: #232323;
+                            border: 0;
+                            border-bottom: 1px solid #e5e5e5;
+                            padding: 15px 0;
+                            padding-right: 100px;
+                            display: block;
+                            width: ~'calc(100% - 100px)';
+                            &:placeholder-shown{
+                                +label{
+                                    display: block;
+                                }
+                            }
+                        }
+                        button{
+                            position: absolute;
+                            bottom: 13px;
+                            border: 0;
+                            right: 0;;
+                        }
+                    }
+                }
+                .navigation{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 50px 0;
+                    margin-left: 200px;
+                    margin-bottom: 80px;
+                    .str{
+                        position: unset;
+                        &.left{
+                            margin-right: 42px;
+                            transform: rotate(180deg);
+                            filter: invert(2);
+                            opacity: 0.5;
+                        }
+                        &.right{
+                            margin-left: 25px;
+                        }
+                    }
+                    ul{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        li{
+                            width: 55px;
+                            height: 55px;
+                            border: 1px solid transparent;
+                            margin-right: 17px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &.active{
+                                border: 1px solid #ea0013;
+                                a{
+                                    color: #ea0013;
+                                }
+                            }
+                            a{
+                                color: #232323;
+                                font-family: "Apercu Pro";
+                                font-size: 20px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.created_company{
+            .content{
+                position: relative;
+                margin-bottom: 140px;
+                p{
+                    &.sect-title{
+                        margin-top: 0;
+                        transform: translate(0,-30px);
+                        color: #232323;
+                        font-family: "Apercu Pro";
+                        font-size: 90px;
+                        font-weight: 500;
+                        width: 450px;
+                        margin-left: 80px;
+                        line-height: 100.01px;
+                    }
+                }
+                .img_year{
+                    position: absolute;
+                    top: 130px;
+                    left: 0;
+                    width: 963px;
+                    z-index: -1;
+                    height: 279px;
+                    background-image: url(../images/1994.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+                .block{
+                    height: 550px;
+                    display: flex;
+                    div{
+                        width: 50%;
+                        height: ~'calc(100% - 150px)';
+                        padding: 75px;
+                        padding-right: 0;
+                        background-size: cover;
+                        background-position: center bottom;
+                        &.left{
+                            background-image: url(../images/created_1.png);
+                            p{
+                                &.two{
+                                    margin-right: 150px;
+                                }
+                            }
+                        }
+                        &.right{
+                            background-image: url(../images/created_2.png);
+                            position: relative;
+                            bottom: 100px;
+                            &:before{
+                                content: '';
+                                bottom: 0;
+                                right: 0;
+                                opacity: 0.5;
+                                position: absolute;
+                                background-image: url(../images/light_red.png);
+                                background-position: right bottom;
+                                background-repeat: no-repeat;
+                                z-index: 1;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            p{
+                                position: relative;
+                                z-index: 3;
+                                &.two{
+                                    margin-right: 60px;
+                                }
+                            }
+                        }
+                        p{
+                            margin: 0;
+                            &.one{
+                                color: #ffffff;
+                                font-family: "Apercu Pro";
+                                font-size: 90px;
+                                font-weight: 500;
+                                line-height: 100.01px;
+                                margin-bottom: 40px;
+                            }
+                            &.two{
+                                color: #ffffff;
+                                font-family: Spectral;
+                                font-size: 23px;
+                                font-weight: 500;
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                    
+                }
+                .big_figure{
+                    bottom: -75px;
+                    right: -130px;
+                    z-index: -1;
+                }
+            }
+        }
+        &.companies{
+            .content{
+                p.title{
+                    color: #232323;
+                    font-family: "Apercu Pro";
+                    font-size: 30px;
+                    font-weight: 500;
+                    margin-bottom: 70px;
+                    margin-top: 0;
+                }
+                .block{
+                    border: 1px solid #e0e0e0;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    position: relative;
+                    border-bottom: 0;
+                    &:before,&:after{
+                        content: '';
+                        display: block;
+                        width: 1px;
+                        height: 100%;
+                        background-color: #e0e0e0;
+                        position: absolute;
+                        left: 33.33%;
+                        top: 0;
+                    }
+                    &:after{
+                        left: 66.66%;
+                    }
+                    .item{
+                        width: ~'calc(100% / 3)';
+                        border-bottom: 1px solid #e0e0e0;
+                        height: 225px;
+                        display: flex;
+                        text-decoration: none;
+                        align-items: center;
+                        justify-content: center;
+                        &.about{
+                            background: #f6f6f6;
+                            position: relative;
+                            justify-content: flex-start;
+                            p{
+                                color: #232323;
+                                margin-top: 0;
+                                font-family: "Apercu Pro";
+                                font-size: 25px;
+                                font-weight: 500;
+                                margin-left: 30%;
+                                max-width: 132px;;
+                            }
+                            .str{
+                                bottom: 60px;
+                                left: 30%;
+                            }
+                        }
+                        img{
+                            max-width: 95%;
+                            max-height: 95%;
+                        }
+                    }
+                }
+            }
+        }
+        &.page_title{
+            margin-top: 200px;
+            .content{
+                p.title{
+                    color: #232323;
+                    font-family: "Apercu Pro";
+                    font-size: 60px;
+                    font-weight: 500;
+                    line-height: 100.02px;
+                    margin-top: 0;
+                    position: relative;
+                    &:before{
+                        content: '';
+                        width: 100%;
+                        right: 100%;
+                        margin-right: 57px;
+                        display: block;
+                        height: 1px;
+                        background-color: #ea0013;
+                        position: absolute;
+                        top: 57px;
+                    }
+                }
+                ul.sub_menu{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 80px;
+                    li{
+                        position: relative;
+                        cursor: pointer;
+                        &.active{
+                            cursor: default;
+                            &:before{
+                                width: 41px;
+                            }
+                            a{
+                                color: #ea0013;
+                            }
+                        }
+                        &:before{
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 2px;
+                            background-color: #ea0013;
+                            position: absolute;
+                            bottom: 0;
+                            transition: @anim;
+                            left: 0;
+                        }
+                        &:hover{
+                            &:before{
+                                width: 41px;
+                            }
+                            a{
+                                color: #ea0013;
+                            }
+                        }
+                        a{
+                            color: #232323;
+                            transition: @anim;
+                            font-family: "Apercu Pro";
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 40.01px;
+                        }
+
+                    }
+                }
+            }
+        }
+        &.fin_report{
+            .content{
+                p.title{
+                    color: #232323;
+                    font-family: Spectral;
+                    font-size: 35px;
+                    font-weight: 400;
+                    line-height: 46.01px;
+                }
+                .block{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 70px;
+                    justify-content: space-between;
+                    .item{
+                        height: 113px;
+                        display: block;
+                        border: 1px solid #dddddd;
+                        background-color: #ffffff;
+                        position: relative;
+                        margin-bottom: 20px;
+                        flex-basis: ~"calc((100% - 40px)/2)";
+                        &:before{
+                            content: '';
+                            display: flex;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 11px;
+                            height: 11px;
+                            background-image: url(../images/reqtangle_red.png);
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                        }
+                        p{
+                            color: #232323;
+                            font-family: "Apercu Pro";
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 30px;
+                            margin-left: 30px;
+                            &.type{
+                                color: #ea0013;
+                                font-family: "Apercu Pro";
+                                font-size: 13px;
+                                font-weight: 500;
+                                text-transform: uppercase;
+                                line-height: 11px;
+                                letter-spacing: 5.2px;
+                                margin: 0;
+                                position: absolute;
+                                bottom: 27px;
+                                left: 30px;
+                                span{
+                                    color: #8a8989;
+                                    margin-left: 16px;
+                                    font-family: "Apercu Pro";
+                                    font-size: 13px;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                        .str{
+                            bottom: 27px;
+                            
+                            right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        &.block_text{
+            margin-bottom: 100px;
+            .content{
+                p{
+                    &.title{
+                        color: #232323;
+                        font-family: Spectral;
+                        font-size: 35px;
+                        font-weight: 400;
+                        line-height: 46.01px;
+                        max-width: 525px;
+                        margin-bottom: 20px;
+                    }
+                }
+                a.red{
+                    color: #ea0013;
+                    font-family: "Apercu Pro";
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 20px;
+                }
+            }
+        }
+        &.inf_rating{
+            margin-bottom: 70px;
+            .content{
+                .item{
+                    display: flex;
+                    border: 1px solid #dddddd;
+                    margin-bottom: 20px;
+                    .img{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        padding: 48px;
+                        flex-basis: 310px;
+                        border-right: 1px solid #dddddd;
+                        background-color: #f7f7f7;
+                        img{
+                            max-width: 215px;
+                            height: auto;
+                        }
+                        p{
+                            color: #232323;
+                            font-family: "Apercu Pro";
+                            font-size: 20px;
+                            font-weight: 500;
+                            line-height: 12px;
+                            letter-spacing: 2.4px;
+                            &:before{
+                                content: '-';
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                    .right{
+                        flex-basis: 930px;
+                        padding: 40px 55px;
+                        p{
+                            &.one{
+                                color: #232323;
+                                font-family: "Apercu Pro";
+                                font-size: 20px;
+                                font-weight: 500;
+                                margin-top: 0;
+                            }
+                            &.two{
+                                color: #232323;
+                                font-family: Spectral;
+                                font-size: 15px;
+                                font-weight: 500;
+                                line-height: 22px;
+                            }
+                            &.date{
+                                color: #b3b3b3;
+                                font-family: "Spectral";
+                                font-size: 13px;
+                                font-weight: 400;
+                                line-height: 22px;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.indicators{
+            margin-bottom: 130px;
+            .content{
+                position: relative;
+                p.titile{
+                    color: #232323;
+                    font-family: "Apercu Pro";
+                    font-size: 35px;
+                    font-weight: 500;
+                    line-height: 100.02px;
+                }
+                .block{
+                    display: flex;
+                    table{
+                        &.titles{
+                            width: 414px;
+                            tr{
+                                height: 61px;
+                                background-color: #f7f7f7;
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+                                &:first-child{
+                                    background-color: transparent;
+                                }
+                                td{
+                                    color: #232323;
+                                    font-family: "Apercu Pro";
+                                    margin-right: 30px;
+                                    font-size: 15px;
+                                    font-weight: 500;
+                                    line-height: 24px;
+                                    margin-left: 30px;
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                    .slider{
+                        width: 830px;
+                        justify-content: space-between;
+                        display: flex !important;
+                        ul{
+                            display: flex;
+                            max-width: 210px;
+                            flex-direction: column;
+                            align-items: center;
+                            li{
+                                color: #232323;
+                                font-family: "Apercu Pro";
+                                font-size: 15px;
+                                display: flex;
+                                padding: 0;
+                                justify-content: center;
+                                align-items: center;
+                                font-weight: 400;
+                                line-height: 24px;
+                                height: 61px;
+                                &:first-child{
+                                    color: #ea0013;
+                                    font-size: 25px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                        .slick-next,.slick-prev{
+                            background-color: transparent;
+                            border: 0;
+                            color: transparent;
+                            border-radius: 0;
+                            background-image: url(../images/str_black.png);
+                            width: 48px;
+                            height: 11px;
+                            position: absolute;
+                            cursor: pointer;
+                            top: 22px;
+                            right: 0;
+                            transition: all @anim;
+                            z-index: 3;
+                            &:hover{
+                                margin-right: -10px;
+                            }
+                        }
+                        .slick-list{
+                            width: 100%;
+                        }
+                        .slick-prev{
+                            left:0;
+                            margin-top: 2px;
+                            transform: rotate(180deg);
+                            &:hover{
+                                margin-left: -10px;
+                            }
+                        }
+                    }
+                    .progress_slide{
+                        position: absolute;
+                        bottom: -40px;
+                        right: 0;
+                        height: 4px;
+                        background-color: #f0f0f0;
+                        span{
+                            display: block;
+                            transition: @anim;
+                            width: 0;
+                            height: 4px;
+                            background-color: #ea0013;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        overflow: hidden;
+        .content{
+            position: relative;
+            background-color: #282828;
+            &:before{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 100%;
+                background-color: #282828;
+            }
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 50%;
+                top: 0;
+                left: -17px;
+                height: 100%;
+                padding-bottom: 45px;
+                background-image: url(../images/big_figure_black.png);
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position: left top;
+            }
+            .block{
+                padding-top: 115px;
+                padding-bottom: 40px;
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+                z-index: 3;
+                .col{
+                    flex-basis: 280px;
+                    &:last-child{
+                        a{
+                            
+                            &.white{
+                                margin-left: 55px;
+                            }
+                        }
+                    }
+                    a{
+                        display: block;
+                        margin-bottom: 15px;
+                        text-decoration: none;
+                        &.white{
+                            color: #ffffff;
+                            font-family: "Apercu Pro";
+                            font-size: 17px;
+                            font-weight: 500;
+                        }
+                        &.phone{
+                            color: #f5001d;
+                            font-family: "Apercu Pro";
+                            font-size: 24px;
+                            font-weight: 700;
+                            margin-top: 10px;
+                        }
+                        &.copyright{
+                            color: #ffffff6b;
+                            font-family: "Apercu Pro";
+                            font-size: 12px;
+                            font-weight: 400;
+                            line-height: 35px;
+                            margin-top: 142px;
+                            display: flex;
+                            align-items: center;
+                            img{
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                    ul{
+                        padding: 0;
+                        margin: 0;
+                        margin-top: 30px;
+                        margin-bottom: 60px;
+                        li {
+                            a{
+                                opacity: 0.4;
+                                color: #ffffff;
+                                font-family: "Apercu Pro";
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 15px;
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .up{
+                position: absolute;
+                top: 0;
+                z-index: 10;
+                right: 0;
+                transform: translate(50%,0);
+                width: 100px;
+                height: 161px;
+                background-color: #f5001d;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .str{
+                    position: unset;
+                    transform: rotate(-90deg);
+                    transform-origin: center center;
+                }
+            }
+        }
+    }
+}
+.small_figure{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(../images/small_figure.png);
+}
+.big_figure{
+    width: 334px;
+    height: 335px;
+    position: absolute;
+    background-image: url(../images/big_figure.png);
+}
+.str{
+    position: absolute;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 18px;
+    &.white{
+        background-image: url(../images/str.png);
+    }
+    &.red{
+        background-image: url(../images/str_red.png);
+        height: 23px;
+    }
+    &.black{
+        background-image: url(../images/str_black.png);
+        width: 48px;
+        height: 11px;
+    }
+}
