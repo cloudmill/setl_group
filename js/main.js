@@ -4,9 +4,11 @@ $(document).ready(function(){
     sliders()
 })
 
-
+ 
 custom = function(){
-
+    $(document).on('click','.drop_down_lists .item .plus',function(){
+        $(this).parent().toggleClass('open')
+    })
 }
 sliders_init = function(){
     $('.main_banner .slider').slick({
