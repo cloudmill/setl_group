@@ -862,6 +862,9 @@ body {
   min-width: 100%;
   min-height: 100%;
 }
+.wrapper section.page_title.has_bg .content ul.sub_menu.mini li a {
+  color: white;
+}
 .wrapper section.page_title.has_bg p {
   color: white !important;
 }
@@ -911,7 +914,7 @@ body {
   margin-right: 50px;
 }
 .wrapper section.page_title .content ul.sub_menu.mini li a {
-  color: white;
+  color: black;
 }
 .wrapper section.page_title .content ul.sub_menu li {
   position: relative;
