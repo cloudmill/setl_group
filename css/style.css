@@ -902,16 +902,15 @@ body {
 .wrapper section.page_title .content ul.sub_menu {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 80px;
 }
 .wrapper section.page_title .content ul.sub_menu.mini {
-  max-width: 300px;
-  margin-top: -65px;
+  margin-top: -45px;
   justify-content: flex-start;
 }
 .wrapper section.page_title .content ul.sub_menu.mini li {
-  margin-right: 50px;
+  margin-right: 25px;
 }
 .wrapper section.page_title .content ul.sub_menu.mini li a {
   color: black;
@@ -919,6 +918,7 @@ body {
 .wrapper section.page_title .content ul.sub_menu li {
   position: relative;
   cursor: pointer;
+  min-width: 85px;
 }
 .wrapper section.page_title .content ul.sub_menu li.active {
   cursor: default;
@@ -952,7 +952,7 @@ body {
   font-family: "Apercu Pro";
   font-size: 16px;
   font-weight: 400;
-  line-height: 40.01px;
+  line-height: 19px;
 }
 .wrapper section.fin_report .content p.title {
   color: #232323;
@@ -1035,12 +1035,86 @@ body {
 .wrapper section.block_text .content p.title.two {
   max-width: 900px;
 }
+.wrapper section.block_text .content p.three {
+  color: #232323;
+  font-family: Spectral;
+  max-width: 900px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 36px;
+}
+.wrapper section.block_text .content p.four {
+  color: #232323;
+  max-width: 900px;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
 .wrapper section.block_text .content a.red {
   color: #ea0013;
   font-family: "Apercu Pro";
   font-size: 22px;
   font-weight: 400;
   line-height: 20px;
+}
+.wrapper section.block_text .block_left_img {
+  margin-left: 200px;
+  position: relative;
+}
+.wrapper section.block_text .block_left_img .block {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.wrapper section.block_text .block_left_img .block .item {
+  width: calc(50% - 82px);
+  padding: 60px 40px;
+  border: 1px solid #dddddd;
+  border-top: 0;
+  position: relative;
+}
+.wrapper section.block_text .block_left_img .block .item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: -1px;
+  width: 1px;
+  height: 36px;
+  background-color: #ed1c23;
+}
+.wrapper section.block_text .block_left_img .block .item:nth-child(1) {
+  border-top: 1px solid #dddddd;
+}
+.wrapper section.block_text .block_left_img .block .item:nth-child(2) {
+  border-top: 1px solid #dddddd;
+}
+.wrapper section.block_text .block_left_img .block .item:nth-child(even) {
+  border-left: 0;
+}
+.wrapper section.block_text .block_left_img .block .item p {
+  color: #232323;
+  margin: 0;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.wrapper section.block_text .block_left_img .block .item p a {
+  color: #ea0013;
+  font-family: "Apercu Pro";
+  font-weight: 500;
+}
+.wrapper section.block_text .block_left_img p {
+  max-width: 900px;
+  margin-top: 50px;
+}
+.wrapper section.block_text .block_left_img img {
+  position: absolute;
+  top: 0;
+  left: -200px;
 }
 .wrapper section.block_text .citys {
   max-width: 100%;
@@ -1650,6 +1724,114 @@ body {
   line-height: 30px;
   margin-top: 15px;
   margin-bottom: 0;
+}
+.wrapper section.overseas_projects {
+  position: relative;
+}
+.wrapper section.overseas_projects .img {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 50%;
+  margin-right: 150px;
+  width: 753px;
+  height: 531px;
+}
+.wrapper section.overseas_projects .img img {
+  max-width: 100%;
+}
+.wrapper section.overseas_projects .content {
+  margin-bottom: 150px;
+  display: flex;
+  padding: 100px 0;
+}
+.wrapper section.overseas_projects .content .left {
+  display: flex;
+  justify-content: flex-end;
+  width: calc(50% - 150px);
+  margin-right: 150px;
+  position: relative;
+  align-items: flex-start;
+}
+.wrapper section.overseas_projects .content .left .logotype {
+  box-shadow: 0 8px 21px rgba(0, 0, 1, 0.19);
+  background-color: #ffffff;
+  padding: 40px;
+  position: relative;
+  right: -40px;
+  height: auto;
+}
+.wrapper section.overseas_projects .content .left .logotype img {
+  width: 121px;
+  height: 66px;
+}
+.wrapper section.overseas_projects .content .left .midlle_figure {
+  position: absolute;
+  right: 163px;
+  bottom: -170px;
+}
+.wrapper section.overseas_projects .content .right {
+  width: 50%;
+}
+.wrapper section.overseas_projects .content .right p.one {
+  width: 577px;
+  height: 169px;
+  color: #232323;
+  font-family: Spectral;
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 0;
+  line-height: 36px;
+  margin-bottom: 40px;
+}
+.wrapper section.overseas_projects .content .right p.two {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 0;
+}
+.wrapper section.overseas_projects .content .right p a {
+  color: #ea0013;
+}
+.wrapper section.requisites {
+  margin-bottom: 100px;
+}
+.wrapper section.requisites .content p.title {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 100.02px;
+  margin-bottom: 0;
+}
+.wrapper section.requisites .content .block table {
+  padding: 0 40px;
+  border: 1px solid #e8e8e8;
+}
+.wrapper section.requisites .content .block table tr {
+  display: flex;
+}
+.wrapper section.requisites .content .block table tr:first-child td {
+  padding-top: 40px;
+}
+.wrapper section.requisites .content .block table tr:last-child td {
+  padding-bottom: 40px;
+}
+.wrapper section.requisites .content .block table tr td {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 15px;
+  padding: 20px 50px;
+  display: inline-block;
+  font-weight: 400;
+  width: calc(50% + 100px);
+}
+.wrapper section.requisites .content .block table tr td:nth-child(odd) {
+  width: calc(50% - 100px);
+  border-right: 1px solid #e8e8e8;
+  font-weight: 500;
 }
 .wrapper footer {
   overflow: hidden;
