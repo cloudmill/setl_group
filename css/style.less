@@ -59,6 +59,7 @@ body {
   scroll-behavior: smooth;
 }
 .wrapper {
+  overflow: hidden;
   header {
     width: 100%;
     padding: 40px 0;
@@ -665,7 +666,7 @@ body {
         }
       }
     }
-    &.block_img{
+    &.block_img {
       .content {
         position: relative;
         margin-bottom: 140px;
@@ -693,7 +694,7 @@ body {
           background-size: contain;
           background-repeat: no-repeat;
         }
-        a.proj{
+        a.proj {
           width: 188px;
           height: 54px;
           display: flex;
@@ -708,25 +709,25 @@ body {
           margin-bottom: 120px;
           font-size: 15px;
           font-weight: 500;
-          &:before{
-            content: '';
+          &:before {
+            content: "";
             display: block;
             position: absolute;
             left: 0;
             top: 0;
             height: 70%;
             width: 1px;
-            background-color:  #f3001b;
+            background-color: #f3001b;
           }
-          &:after{
-            content: '';
+          &:after {
+            content: "";
             display: block;
             position: absolute;
             right: 0;
             bottom: 0;
             width: 1px;
             height: 70%;
-            background-color:  #f3001b;
+            background-color: #f3001b;
           }
         }
         .block {
@@ -745,7 +746,6 @@ body {
                   margin-right: 150px;
                 }
               }
-              
             }
             &.right {
               position: relative;
@@ -773,13 +773,13 @@ body {
                 }
               }
             }
-            .str{
+            .str {
               position: absolute;
               bottom: 50px;
               left: 75px;
               z-index: 2;
             }
-            img{
+            img {
               position: absolute;
               z-index: -1;
               top: 0;
@@ -895,86 +895,90 @@ body {
     }
     &.page_title {
       margin-top: 200px;
-      &.has_bg{
+      &.has_bg {
+        position: relative;
+        min-height: 370px;
+        margin-top: 0;
+        padding-top: 200px;
+        .content {
           position: relative;
-          min-height: 370px;
-          margin-top: 0;
-          padding-top: 200px;
-          .content{
-              position: relative;
-          }
-          img{
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              min-width: 100%;
-              min-height: 100%;
-          }
-          .content{
-            ul.sub_menu{
-              &.mini{
-                li{
-                  a{
-                    color: white;
-                  }
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          min-width: 100%;
+          min-height: 100%;
+        }
+        .content {
+          ul.sub_menu {
+            &.mini {
+              li {
+                a {
+                  color: white;
                 }
               }
             }
           }
-          p{
-              color: white !important;
-          }
+        }
+        p {
+          color: white !important;
+        }
       }
       .content {
-        p{
-            &.title {
-                color: #232323;
-                font-family: "Apercu Pro";
-                font-size: 60px;
-                font-weight: 500;
-                line-height: 100.02px;
-                margin-top: 0;
-                position: relative;
-                &:before {
-                    content: "";
-                    width: 100%;
-                    right: 100%;
-                    margin-right: 57px;
-                    display: block;
-                    height: 1px;
-                    background-color: #ea0013;
-                    position: absolute;
-                    top: 57px;
-                }
+        p {
+          &.title {
+            color: #232323;
+            font-family: "Apercu Pro";
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 100.02px;
+            margin-top: 0;
+            position: relative;
+            &:before {
+              content: "";
+              width: 100%;
+              right: 100%;
+              margin-right: 57px;
+              display: block;
+              height: 1px;
+              background-color: #ea0013;
+              position: absolute;
+              top: 57px;
             }
-            &.info{
-                position: absolute;
-                margin-left: 400px;
-                left: 0;
-                top: 0;
-                color: #fefefe;
-                font-family: Spectral;
-                font-size: 25px;
-                font-weight: 400;
-                line-height: 36px;
-            }
+          }
+          &.info {
+            position: absolute;
+            margin-left: 400px;
+            left: 0;
+            top: 0;
+            color: #fefefe;
+            font-family: Spectral;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 36px;
+          }
         }
         ul.sub_menu {
           display: flex;
           justify-content: space-between;
-          align-items: flex-end;
+          align-items: flex-start;
           margin-bottom: 80px;
-          &.mini{
-              margin-top: -45px;
-              justify-content: flex-start;
-              li{
-                  margin-right: 25px;
-                  a{
-                      color: black;
-                  }
+          &.mini {
+            margin-top: -45px;
+            justify-content: flex-start;
+            &.space_b {
+              justify-content: space-between;
+            }
+            li {
+              margin-right: 25px;
+              max-width: 210px;
+              a {
+                color: black;
               }
+            }
           }
           li {
             position: relative;
@@ -996,7 +1000,7 @@ body {
               height: 2px;
               background-color: #ea0013;
               position: absolute;
-              bottom: 0;
+              bottom: -5px;
               transition: @anim;
               left: 0;
             }
@@ -1103,11 +1107,11 @@ body {
             line-height: 46.01px;
             max-width: 525px;
             margin-bottom: 20px;
-            &.two{
-                max-width: 900px;
+            &.two {
+              max-width: 900px;
             }
           }
-          &.three{
+          &.three {
             color: #232323;
             font-family: Spectral;
             max-width: 900px;
@@ -1115,7 +1119,7 @@ body {
             font-weight: 400;
             line-height: 36px;
           }
-          &.four{
+          &.four {
             color: #232323;
             max-width: 900px;
             font-family: "Apercu Pro";
@@ -1132,22 +1136,22 @@ body {
           line-height: 20px;
         }
       }
-      .block_left_img{
+      .block_left_img {
         margin-left: 200px;
         position: relative;
-        .block{
+        .block {
           margin-top: 80px;
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-end;
-          .item{
-            width: ~'calc(50% - 82px)';
+          .item {
+            width: ~"calc(50% - 82px)";
             padding: 60px 40px;
             border: 1px solid #dddddd;
             border-top: 0;
             position: relative;
-            &::before{
-              content: '';
+            &::before {
+              content: "";
               display: block;
               position: absolute;
               top: 60px;
@@ -1156,23 +1160,23 @@ body {
               height: 36px;
               background-color: #ed1c23;
             }
-            &:nth-child(1){
+            &:nth-child(1) {
               border-top: 1px solid #dddddd;
             }
-            &:nth-child(2){
+            &:nth-child(2) {
               border-top: 1px solid #dddddd;
             }
-            &:nth-child(even){
+            &:nth-child(even) {
               border-left: 0;
             }
-            p{
+            p {
               color: #232323;
               margin: 0;
               font-family: "Apercu Pro";
               font-size: 16px;
               font-weight: 400;
               line-height: 24px;
-              a{
+              a {
                 color: #ea0013;
                 font-family: "Apercu Pro";
                 font-weight: 500;
@@ -1180,41 +1184,41 @@ body {
             }
           }
         }
-        p{
+        p {
           max-width: 900px;
           margin-top: 50px;
         }
-        img{
+        img {
           position: absolute;
           top: 0;
           left: -200px;
         }
       }
-      .citys{
-          max-width: 100%;
-          margin: auto;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          margin-top: 80px;
-          margin-bottom: 90px;
-          span{
-            margin: 0 20px;
-            text-transform: uppercase;
-            text-shadow: #ed1c23 0 0 3px;
-            color: white;
-            font-family: "Apercu Pro";
-            white-space: nowrap;
-            letter-spacing: 8px;
-            font-size:22px;
-            font-weight: 400;
-            line-height: 36px;
-          }
+      .citys {
+        max-width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 90px;
+        span {
+          margin: 0 20px;
+          text-transform: uppercase;
+          text-shadow: #ed1c23 0 0 3px;
+          color: white;
+          font-family: "Apercu Pro";
+          white-space: nowrap;
+          letter-spacing: 8px;
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 36px;
+        }
       }
-      .fig{
+      .fig {
         position: relative;
         margin-top: 70px;
-        p{
+        p {
           color: #232323;
           font-family: "Apercu Pro";
           margin: 0;
@@ -1222,9 +1226,8 @@ body {
           font-size: 25px;
           font-weight: 400;
           line-height: 36px;
-          
         }
-        .small_midlle_figure{
+        .small_midlle_figure {
           left: 0;
           top: 0;
         }
@@ -1742,134 +1745,134 @@ body {
           top: -100px;
           right: -100px;
         }
-        .text_project{
-            position: absolute;
-            top: 110px;
-            left: 0;
-            transform: translate(-50%,0);
-            background-image: url(../images/text_project.png);
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            z-index: -3;
-            @width: @width_container/4.6;
-            width: @width;
-            height: @width*5;
+        .text_project {
+          position: absolute;
+          top: 110px;
+          left: 0;
+          transform: translate(-50%, 0);
+          background-image: url(../images/text_project.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          z-index: -3;
+          @width: @width_container / 4.6;
+          width: @width;
+          height: @width*5;
         }
       }
     }
-    &.special{
-        position: relative;
-        margin-bottom: 20px;
-        img.left{
-            position: absolute;
-            width: ~'calc(50% - 100px)';
-            right: 50%;
-            margin-right: 100px;
-            top: 0;
-            width: auto;
-            height: 946px
-        }
-        .midlle_figure{
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-100%,-50%)  rotateZ(180deg);
-        }
-        .content{
-          display: flex;
-          justify-content: flex-end;
-          .right{
-            width: 50%;
-            p{
-              color: #232323;
-              font-family: "Apercu Pro";
-              font-size: 25px;
-              font-weight: 400;
-              line-height: 36px;
-              margin-top: 40px;
-              margin-bottom: 0;
-              &.two{
-                font-size: 30px;
-                margin-bottom: 60px;
-                margin-top: 50px;
-                font-weight: 500;
-                margin-left: 100px;
-              }         
-            }
-            .block{
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-start;
-              flex-wrap: wrap;
+    &.special {
+      position: relative;
+      margin-bottom: 20px;
+      img.left {
+        position: absolute;
+        width: ~"calc(50% - 100px)";
+        right: 50%;
+        margin-right: 100px;
+        top: 0;
+        width: auto;
+        height: 946px;
+      }
+      .midlle_figure {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-100%, -50%) rotateZ(180deg);
+      }
+      .content {
+        display: flex;
+        justify-content: flex-end;
+        .right {
+          width: 50%;
+          p {
+            color: #232323;
+            font-family: "Apercu Pro";
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 36px;
+            margin-top: 40px;
+            margin-bottom: 0;
+            &.two {
+              font-size: 30px;
+              margin-bottom: 60px;
+              margin-top: 50px;
+              font-weight: 500;
               margin-left: 100px;
-              .item{
-                width: 35%;
-                margin-bottom: 50px;
-                height: 140px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-end;
-                p{
-                  font-size: 16px;
-                  font-weight: 400;
-                  line-height: 30px;
-                  margin-top: 15px;
-                  margin-bottom: 0;
-                }
+            }
+          }
+          .block {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-left: 100px;
+            .item {
+              width: 35%;
+              margin-bottom: 50px;
+              height: 140px;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-end;
+              p {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 30px;
+                margin-top: 15px;
+                margin-bottom: 0;
               }
             }
           }
         }
+      }
     }
-    &.overseas_projects{
+    &.overseas_projects {
       position: relative;
-      .img{
+      .img {
         position: absolute;
         top: 50%;
-        transform: translate(0,-50%);
+        transform: translate(0, -50%);
         right: 50%;
         margin-right: 150px;
         width: 753px;
         height: 531px;
-        img{
+        img {
           max-width: 100%;
           max-width: 100%;
         }
       }
-      .content{
+      .content {
         margin-bottom: 150px;
         display: flex;
         padding: 100px 0;
-        .left{
+        .left {
           display: flex;
           justify-content: flex-end;
-          width: ~'calc(50% - 150px)';
+          width: ~"calc(50% - 150px)";
           margin-right: 150px;
           position: relative;
           align-items: flex-start;
-          .logotype{
+          .logotype {
             box-shadow: 0 8px 21px rgba(0, 0, 1, 0.19);
             background-color: #ffffff;
             padding: 40px;
             position: relative;
             right: -40px;
             height: auto;
-            img{
+            img {
               width: 121px;
               height: 66px;
             }
           }
-          .midlle_figure{
+          .midlle_figure {
             position: absolute;
             right: 163px;
             bottom: -170px;
           }
         }
-        .right{
+        .right {
           width: 50%;
-          p{
-            &.one{
+          p {
+            &.one {
               width: 577px;
               height: 169px;
               color: #232323;
@@ -1879,9 +1882,8 @@ body {
               margin-top: 0;
               line-height: 36px;
               margin-bottom: 40px;
-              
             }
-            &.two{
+            &.two {
               color: #232323;
               font-family: "Apercu Pro";
               font-size: 16px;
@@ -1889,17 +1891,17 @@ body {
               line-height: 24px;
               margin-top: 0;
             }
-            a{
+            a {
               color: #ea0013;
             }
           }
         }
       }
     }
-    &.requisites{
+    &.requisites {
       margin-bottom: 100px;
-      .content{
-        p.title{
+      .content {
+        p.title {
           color: #232323;
           font-family: "Apercu Pro";
           font-size: 35px;
@@ -1907,38 +1909,465 @@ body {
           line-height: 100.02px;
           margin-bottom: 0;
         }
-        .block{
-          table{
-            padding:0 40px;
+        .block {
+          table {
+            padding: 0 40px;
             border: 1px solid #e8e8e8;
-            tr{
+            tr {
               display: flex;
-              &:first-child{
-                
-                td{
+              &:first-child {
+                td {
                   padding-top: 40px;
                 }
               }
-              &:last-child{
-                td{
+              &:last-child {
+                td {
                   padding-bottom: 40px;
                 }
               }
-              td{
+              td {
                 color: #232323;
                 font-family: "Apercu Pro";
                 font-size: 15px;
                 padding: 20px 50px;
                 display: inline-block;
                 font-weight: 400;
-                width: ~'calc(50% + 100px)';
-                &:nth-child(odd){
-                  width: ~'calc(50% - 100px)';
+                width: ~"calc(50% + 100px)";
+                &:nth-child(odd) {
+                  width: ~"calc(50% - 100px)";
                   border-right: 1px solid #e8e8e8;
                   font-weight: 500;
                 }
-                
               }
+            }
+          }
+        }
+      }
+    }
+    &.struct {
+      .content {
+        .block {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .item {
+            margin-bottom: 80px;
+            width: ~"calc((100% - 96px * 2 ) / 3)";
+            p.title {
+              color: #2d2d2d;
+              font-family: "Apercu Pro";
+              font-size: 22px;
+              font-weight: 500;
+              margin-bottom: 19px;
+              margin-top: 0;
+            }
+            .row {
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-between;
+              border-top: 4px solid #ea0013;
+              padding-top: 30px;
+              a {
+                display: block;
+                width: ~"calc((100% - 40px)/2)";
+                height: 46px;
+                &:hover {
+                  img {
+                    filter: grayscale(0);
+                    opacity: 1;
+                  }
+                }
+                img {
+                  max-width: 100%;
+                  height: auto;
+                  max-height: 45px;
+                  filter: grayscale(1);
+                  transition: @anim;
+                  opacity: 0.3;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.bosses {
+      .content {
+        .row {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 100px;
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+          }
+          .item {
+            width: ~"calc(50% + 80px)";
+            position: relative;
+            .text {
+              position: absolute;
+              top: 70px;
+              right: 0;
+              width: 300px;
+              p {
+                color: #232323;
+                margin: 0;
+                &.one {
+                  font-family: "Apercu Pro";
+                  font-size: 32px;
+                  font-weight: 500;
+                  margin-bottom: 29px;
+                }
+                &.two {
+                  font-family: Spectral;
+                  font-size: 18px;
+                  font-weight: 400;
+                }
+              }
+            }
+            .img {
+              width: 516px;
+              height: 498px;
+              overflow: hidden;
+              img {
+                max-width: 100%;
+                min-height: 100%;
+                width: 100%;
+                height: auto;
+              }
+            }
+            .very_small_figure {
+              position: absolute;
+              top: 20px;
+              left: 20px;
+            }
+          }
+          .block {
+            width: ~"calc(50% - 130px)";
+            .item {
+              width: 100%;
+              margin-bottom: 50px;
+              .img {
+                width: 240px;
+                height: 224px;
+              }
+              .text {
+                top: 40px;
+                p {
+                  &.one {
+                    font-size: 18px;
+                    margin-bottom: 19px;
+                  }
+                  &.two {
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.contacts {
+      .bg {
+        background-image: url(../images/map.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 603px;
+        position: absolute;
+        z-index: -2;
+      }
+      .content {
+        position: relative;
+        top: 70px;
+        .block {
+          display: flex;
+          justify-content: flex-end;
+          .right {
+            margin-top: 120px;
+            height: ~"calc(100% - 200px)";
+            background-color: #282828;
+            padding: 100px;
+            padding-right: 0;
+            width: ~"calc(50% - 100px)";
+            position: relative;
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              height: 100%;
+              width: 1000px;
+              background: inherit;
+              left: 100%;
+              top: 0;
+            }
+            p {
+              color: #ffffff;
+              font-family: "Apercu Pro";
+              font-size: 40px;
+              font-weight: 500;
+              margin-top: 0;
+              line-height: 39px;
+              span.geo {
+                width: 16px;
+                margin-bottom: 20px;
+                height: 23px;
+                display: block;
+                background-image: url(../images/geo.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+            }
+            a {
+              color: #ffffff;
+              font-family: "Apercu Pro";
+              font-size: 40px;
+              font-weight: 500;
+              border-bottom: 1px solid #ea0013;
+              text-decoration: none;
+              span.phone {
+                width: 21px;
+                height: 20px;
+                display: block;
+                background-image: url(../images/phone.png);
+                background-repeat: no-repeat;
+                margin-bottom: 20px;
+                background-size: contain;
+              }
+            }
+            span.sub_text {
+              color: #919191;
+              font-family: "Apercu Pro";
+              font-size: 16px;
+              display: block;
+              margin-top: 14px;
+              font-weight: 300;
+            }
+          }
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 100px;
+          margin-bottom: 180px;
+          .col {
+            max-width: 240px;
+            position: relative;
+            &:first-child {
+              max-width: 220px;
+            }
+            &:last-child {
+              max-width: 430px;
+            }
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 34px;
+              height: 3px;
+              background-color: #ea0013;
+            }
+            p {
+              color: #232323;
+              font-family: "Apercu Pro";
+              font-size: 30px;
+              font-weight: 500;
+            }
+            a {
+              color: #ea0013;
+              font-family: "Apercu Pro";
+              font-size: 18px;
+              font-weight: 400;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    &.history {
+      position: relative;
+      margin-bottom: 120px;
+      .overflow_container{
+        overflow: hidden;
+        position: relative;
+        &::before{
+          content: '';
+          display: block;
+          position: absolute;
+          height: 2px;
+          width: 50%;
+          background-color: #ed1c23;
+          bottom: 0;
+          left: 50%;
+        }
+      }
+      .bg {
+        height: ~"calc(100% + 452px)";
+        position: absolute;
+        z-index: -1;
+        top: -452px;
+        left: 0;
+        width: 100%;
+        background-image: url(../images/bg_history.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+      }
+      .content {
+        padding-bottom: 100px;
+        position: relative;
+        &::before{
+          content: '';
+          display: block;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          background-color: #ed1c23;
+          bottom: 0;
+          left: 0;
+        }
+        .years {
+          width: 200px;
+          .slick-list{
+            overflow: visible;
+          }
+          .item {
+            color: #232323;
+            font-family: "Apercu Pro";
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 80px;
+            text-align: left;
+            transition: @anim;
+            padding-right: 50px;
+            cursor: pointer;
+          }
+          .slick-current {
+            .item {
+              cursor: default;
+              color: #ea0013;
+              font-family: "Apercu Pro";
+              font-size: 60px;
+              font-weight: 700;
+            }
+          }
+        }
+        .years_progress{
+          margin-bottom: 50px;
+          width: 100%;
+          background-color: #e5e5e5;
+          height: 1px;
+          .current{
+            height: 1px;
+            position: relative;
+            width: 119px;
+            transition: @anim;
+            background-color: #ea0013;
+          }
+        }
+        .events {
+          width: ~"calc(100% - 300px)";
+          ::-webkit-scrollbar {
+            width: 2px;
+          }
+          ::-webkit-scrollbar-thumb {
+            background-color: #ed1c23;
+          }
+          ::-webkit-scrollbar-track-piece {
+            background-color: #e8e8e8;
+          }
+          .slick-list{
+            overflow: visible;
+          }
+          .item {
+            .block {
+              padding: 25px;
+              padding-right: 125px;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                background-color: #fff;
+                height: 100%;
+                width: ~"calc(100% - 100px)";
+                z-index: -1;
+              }
+              .text {
+                background-color: #fff;
+                padding: 35px;
+                overflow-y: scroll;
+                height: 480px;
+              }
+              p {
+                color: #232323;
+                margin: 0;
+                font-family: Spectral;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 25px;
+              }
+            }
+          }
+          .slick-slide{
+            .block{
+              opacity: 0.3;
+              transition: @anim;
+            }
+            &.slick-active{
+              .block{
+                opacity: 1;
+              }
+            }
+          }
+          .slick-arrow{
+            width: 260px;
+            height: 86px;
+            border: 0;
+            z-index: 10;
+            position: absolute;
+            left: 100%;
+            margin-left: -50px;
+            font-family: "Apercu Pro";
+            font-size: 50px;
+            font-weight: 700;
+            font-style: italic;
+            cursor: pointer;
+            &::before{
+              content: '';
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 96px;
+              height: 22px;
+              position: absolute;
+              z-index: 2;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+            }
+          }
+          .slick-next{
+            top: 60px;
+            background-color: #ed1c23;
+            color: #dd080f;
+            &::before{
+              background-image: url(../images/str_sl_right.png);
+              margin-left: 20px;
+            }
+          }
+          .slick-prev{
+            color: #dcdcdc;
+            background-color: transparent;
+            top: 166px;
+            &::before{
+              background-image: url(../images/str_sl_left.png);
+              margin-left: -20px;
             }
           }
         }
@@ -2060,6 +2489,12 @@ body {
       }
     }
   }
+}
+.very_small_figure {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-image: url(../images/very_small_figure.png);
 }
 .small_figure {
   position: absolute;

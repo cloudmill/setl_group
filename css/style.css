@@ -48,6 +48,9 @@ body {
   padding: 0;
   scroll-behavior: smooth;
 }
+.wrapper {
+  overflow: hidden;
+}
 .wrapper header {
   width: 100%;
   padding: 40px 0;
@@ -667,7 +670,7 @@ body {
   font-weight: 500;
 }
 .wrapper section.block_img .content a.proj:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -677,7 +680,7 @@ body {
   background-color: #f3001b;
 }
 .wrapper section.block_img .content a.proj:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   right: 0;
@@ -902,15 +905,19 @@ body {
 .wrapper section.page_title .content ul.sub_menu {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-bottom: 80px;
 }
 .wrapper section.page_title .content ul.sub_menu.mini {
   margin-top: -45px;
   justify-content: flex-start;
 }
+.wrapper section.page_title .content ul.sub_menu.mini.space_b {
+  justify-content: space-between;
+}
 .wrapper section.page_title .content ul.sub_menu.mini li {
   margin-right: 25px;
+  max-width: 210px;
 }
 .wrapper section.page_title .content ul.sub_menu.mini li a {
   color: black;
@@ -936,7 +943,7 @@ body {
   height: 2px;
   background-color: #ea0013;
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   left: 0;
 }
@@ -1076,7 +1083,7 @@ body {
   position: relative;
 }
 .wrapper section.block_text .block_left_img .block .item::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 60px;
@@ -1833,6 +1840,413 @@ body {
   border-right: 1px solid #e8e8e8;
   font-weight: 500;
 }
+.wrapper section.struct .content .block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wrapper section.struct .content .block .item {
+  margin-bottom: 80px;
+  width: calc((100% - 96px * 2 ) / 3);
+}
+.wrapper section.struct .content .block .item p.title {
+  color: #2d2d2d;
+  font-family: "Apercu Pro";
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 19px;
+  margin-top: 0;
+}
+.wrapper section.struct .content .block .item .row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 4px solid #ea0013;
+  padding-top: 30px;
+}
+.wrapper section.struct .content .block .item .row a {
+  display: block;
+  width: calc((100% - 40px)/2);
+  height: 46px;
+}
+.wrapper section.struct .content .block .item .row a:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+.wrapper section.struct .content .block .item .row a img {
+  max-width: 100%;
+  height: auto;
+  max-height: 45px;
+  filter: grayscale(1);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 0.3;
+}
+.wrapper section.bosses .content .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 100px;
+}
+.wrapper section.bosses .content .row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.wrapper section.bosses .content .row .item {
+  width: calc(50% + 80px);
+  position: relative;
+}
+.wrapper section.bosses .content .row .item .text {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 300px;
+}
+.wrapper section.bosses .content .row .item .text p {
+  color: #232323;
+  margin: 0;
+}
+.wrapper section.bosses .content .row .item .text p.one {
+  font-family: "Apercu Pro";
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 29px;
+}
+.wrapper section.bosses .content .row .item .text p.two {
+  font-family: Spectral;
+  font-size: 18px;
+  font-weight: 400;
+}
+.wrapper section.bosses .content .row .item .img {
+  width: 516px;
+  height: 498px;
+  overflow: hidden;
+}
+.wrapper section.bosses .content .row .item .img img {
+  max-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+}
+.wrapper section.bosses .content .row .item .very_small_figure {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.wrapper section.bosses .content .row .block {
+  width: calc(50% - 130px);
+}
+.wrapper section.bosses .content .row .block .item {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.wrapper section.bosses .content .row .block .item .img {
+  width: 240px;
+  height: 224px;
+}
+.wrapper section.bosses .content .row .block .item .text {
+  top: 40px;
+}
+.wrapper section.bosses .content .row .block .item .text p.one {
+  font-size: 18px;
+  margin-bottom: 19px;
+}
+.wrapper section.bosses .content .row .block .item .text p.two {
+  font-size: 15px;
+}
+.wrapper section.contacts .bg {
+  background-image: url(../images/map.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 603px;
+  position: absolute;
+  z-index: -2;
+}
+.wrapper section.contacts .content {
+  position: relative;
+  top: 70px;
+}
+.wrapper section.contacts .content .block {
+  display: flex;
+  justify-content: flex-end;
+}
+.wrapper section.contacts .content .block .right {
+  margin-top: 120px;
+  height: calc(100% - 200px);
+  background-color: #282828;
+  padding: 100px;
+  padding-right: 0;
+  width: calc(50% - 100px);
+  position: relative;
+}
+.wrapper section.contacts .content .block .right::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 1000px;
+  background: inherit;
+  left: 100%;
+  top: 0;
+}
+.wrapper section.contacts .content .block .right p {
+  color: #ffffff;
+  font-family: "Apercu Pro";
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 0;
+  line-height: 39px;
+}
+.wrapper section.contacts .content .block .right p span.geo {
+  width: 16px;
+  margin-bottom: 20px;
+  height: 23px;
+  display: block;
+  background-image: url(../images/geo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.wrapper section.contacts .content .block .right a {
+  color: #ffffff;
+  font-family: "Apercu Pro";
+  font-size: 40px;
+  font-weight: 500;
+  border-bottom: 1px solid #ea0013;
+  text-decoration: none;
+}
+.wrapper section.contacts .content .block .right a span.phone {
+  width: 21px;
+  height: 20px;
+  display: block;
+  background-image: url(../images/phone.png);
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  background-size: contain;
+}
+.wrapper section.contacts .content .block .right span.sub_text {
+  color: #919191;
+  font-family: "Apercu Pro";
+  font-size: 16px;
+  display: block;
+  margin-top: 14px;
+  font-weight: 300;
+}
+.wrapper section.contacts .content .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 180px;
+}
+.wrapper section.contacts .content .row .col {
+  max-width: 240px;
+  position: relative;
+}
+.wrapper section.contacts .content .row .col:first-child {
+  max-width: 220px;
+}
+.wrapper section.contacts .content .row .col:last-child {
+  max-width: 430px;
+}
+.wrapper section.contacts .content .row .col:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 3px;
+  background-color: #ea0013;
+}
+.wrapper section.contacts .content .row .col p {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 30px;
+  font-weight: 500;
+}
+.wrapper section.contacts .content .row .col a {
+  color: #ea0013;
+  font-family: "Apercu Pro";
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.wrapper section.history {
+  position: relative;
+  margin-bottom: 120px;
+}
+.wrapper section.history .overflow_container {
+  overflow: hidden;
+  position: relative;
+}
+.wrapper section.history .overflow_container::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 50%;
+  background-color: #ed1c23;
+  bottom: 0;
+  left: 50%;
+}
+.wrapper section.history .bg {
+  height: calc(100% + 452px);
+  position: absolute;
+  z-index: -1;
+  top: -452px;
+  left: 0;
+  width: 100%;
+  background-image: url(../images/bg_history.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+.wrapper section.history .content {
+  padding-bottom: 100px;
+  position: relative;
+}
+.wrapper section.history .content::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #ed1c23;
+  bottom: 0;
+  left: 0;
+}
+.wrapper section.history .content .years {
+  width: 200px;
+}
+.wrapper section.history .content .years .slick-list {
+  overflow: visible;
+}
+.wrapper section.history .content .years .item {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 80px;
+  text-align: left;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  padding-right: 50px;
+  cursor: pointer;
+}
+.wrapper section.history .content .years .slick-current .item {
+  cursor: default;
+  color: #ea0013;
+  font-family: "Apercu Pro";
+  font-size: 60px;
+  font-weight: 700;
+}
+.wrapper section.history .content .years_progress {
+  margin-bottom: 50px;
+  width: 100%;
+  background-color: #e5e5e5;
+  height: 1px;
+}
+.wrapper section.history .content .years_progress .current {
+  height: 1px;
+  position: relative;
+  width: 119px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-color: #ea0013;
+}
+.wrapper section.history .content .events {
+  width: calc(100% - 300px);
+}
+.wrapper section.history .content .events ::-webkit-scrollbar {
+  width: 2px;
+}
+.wrapper section.history .content .events ::-webkit-scrollbar-thumb {
+  background-color: #ed1c23;
+}
+.wrapper section.history .content .events ::-webkit-scrollbar-track-piece {
+  background-color: #e8e8e8;
+}
+.wrapper section.history .content .events .slick-list {
+  overflow: visible;
+}
+.wrapper section.history .content .events .item .block {
+  padding: 25px;
+  padding-right: 125px;
+  position: relative;
+}
+.wrapper section.history .content .events .item .block::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 100%;
+  width: calc(100% - 100px);
+  z-index: -1;
+}
+.wrapper section.history .content .events .item .block .text {
+  background-color: #fff;
+  padding: 35px;
+  overflow-y: scroll;
+  height: 480px;
+}
+.wrapper section.history .content .events .item .block p {
+  color: #232323;
+  margin: 0;
+  font-family: Spectral;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+}
+.wrapper section.history .content .events .slick-slide .block {
+  opacity: 0.3;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.history .content .events .slick-slide.slick-active .block {
+  opacity: 1;
+}
+.wrapper section.history .content .events .slick-arrow {
+  width: 260px;
+  height: 86px;
+  border: 0;
+  z-index: 10;
+  position: absolute;
+  left: 100%;
+  margin-left: -50px;
+  font-family: "Apercu Pro";
+  font-size: 50px;
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
+}
+.wrapper section.history .content .events .slick-arrow::before {
+  content: '';
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 96px;
+  height: 22px;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper section.history .content .events .slick-next {
+  top: 60px;
+  background-color: #ed1c23;
+  color: #dd080f;
+}
+.wrapper section.history .content .events .slick-next::before {
+  background-image: url(../images/str_sl_right.png);
+  margin-left: 20px;
+}
+.wrapper section.history .content .events .slick-prev {
+  color: #dcdcdc;
+  background-color: transparent;
+  top: 166px;
+}
+.wrapper section.history .content .events .slick-prev::before {
+  background-image: url(../images/str_sl_left.png);
+  margin-left: -20px;
+}
 .wrapper footer {
   overflow: hidden;
 }
@@ -1941,6 +2355,12 @@ body {
   position: unset;
   transform: rotate(-90deg);
   transform-origin: center center;
+}
+.very_small_figure {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-image: url(../images/very_small_figure.png);
 }
 .small_figure {
   position: absolute;
