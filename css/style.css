@@ -534,7 +534,7 @@ body {
   font-style: italic;
 }
 .wrapper section.news_main .content .form_news {
-  width: 50%;
+  width: calc(50% - 50px);
   margin-left: 50%;
   padding-left: 50px;
   margin-top: 50px;
