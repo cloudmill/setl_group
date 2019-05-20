@@ -330,7 +330,7 @@ body {
 .wrapper section.news_main {
   overflow: hidden;
 }
-.wrapper section.news_main .content > h3 {
+.wrapper section.news_main .content h3 {
   color: #232323;
   font-family: "Apercu Pro";
   font-size: 30px;
@@ -339,7 +339,7 @@ body {
   margin-bottom: 80px;
   position: relative;
 }
-.wrapper section.news_main .content > h3:before {
+.wrapper section.news_main .content h3:before {
   content: "";
   display: block;
   position: absolute;
@@ -353,7 +353,8 @@ body {
 .wrapper section.news_main .content .block {
   display: flex;
 }
-.wrapper section.news_main .content .block > div {
+.wrapper section.news_main .content .block .left,
+.wrapper section.news_main .content .block .right {
   width: 50%;
 }
 .wrapper section.news_main .content .block .left {

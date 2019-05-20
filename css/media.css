@@ -62,6 +62,9 @@
     width: calc(100% - 80px);
     margin: auto;
   }
+  .wrapper header .content .lang {
+    display: none;
+  }
   .wrapper section.main_banner a.projects {
     height: 170px;
     padding-left: 40px;
@@ -149,6 +152,12 @@
   }
 }
 @media (max-width: 768px) {
+  .wrapper header .content .menu_list {
+    display: none;
+  }
+  .wrapper header .content .search {
+    display: none;
+  }
   .wrapper section.main_banner a.projects {
     font-size: 22px;
     height: 143px;
@@ -164,8 +173,13 @@
     width: 55px;
     height: 9px;
   }
+  .wrapper section.main_banner .slider .item .content .text {
+    max-width: 695px;
+    width: auto;
+  }
   .wrapper section.main_banner .slider .item .content .text h1 {
     font-size: 30px;
+    line-height: 40px;
   }
   .wrapper section.main_banner .slider .item .content .text h4 {
     font-size: 20px;
@@ -189,5 +203,198 @@
   }
   .wrapper section.main_banner .slider .slick-prev:hover {
     margin-left: -10px;
+  }
+  .wrapper section.news_main .content h3 {
+    margin: 30px 0;
+  }
+  .wrapper section.news_main .content .block {
+    flex-direction: column;
+  }
+  .wrapper section.news_main .content .block .left,
+  .wrapper section.news_main .content .block .right {
+    width: 100%;
+    max-width: 440px;
+  }
+  .wrapper section.news_main .content .block .left a.img {
+    min-height: 400px;
+  }
+  .wrapper section.news_main .content .block .left a.img img {
+    width: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    min-height: 100%;
+  }
+  .wrapper section.news_main .content .block .left .str {
+    width: 64px;
+    height: 15px;
+    background-size: contain;
+  }
+  .wrapper section.news_main .content .block .right {
+    padding: 0;
+  }
+  .wrapper section.news_main .content .form_news {
+    margin-left: 0;
+    width: auto;
+    padding: 0;
+  }
+  .wrapper section.block_img .content p.sect-title {
+    font-size: 40px;
+    width: auto;
+    max-width: 250px;
+    margin-left: 0;
+    line-height: 50px;
+  }
+  .wrapper section.block_img .content .img_year {
+    top: 50px;
+  }
+  .wrapper section.block_img .content .block {
+    flex-direction: column;
+    height: auto;
+  }
+  .wrapper section.block_img .content .block div {
+    width: auto;
+    min-height: 220px;
+    padding: 30px;
+  }
+  .wrapper section.block_img .content .block div.right {
+    bottom: 0;
+    left: 20px;
+  }
+  .wrapper section.block_img .content .block div p.one {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 46.78px;
+  }
+  .wrapper section.block_img .content .block div p.two {
+    font-size: 14px;
+  }
+  .wrapper section.block_img .content .big_figure {
+    width: 99px;
+    height: 100px;
+    background-size: contain;
+    right: -50px;
+    bottom: -30px;
+  }
+  .wrapper section.companies .content p.title {
+    font-size: 22px;
+  }
+  .wrapper section.companies .content .block {
+    flex-wrap: wrap;
+  }
+  .wrapper section.companies .content .block:before,
+  .wrapper section.companies .content .block:after {
+    content: none;
+  }
+  .wrapper section.companies .content .block .item {
+    width: calc(50%);
+  }
+  .wrapper section.companies .content .block .item:nth-child(5) {
+    width: 100%;
+  }
+  .wrapper section.companies .content .block .item:nth-child(6) {
+    width: 100%;
+  }
+  .wrapper section.companies .content .block .item.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper section.companies .content .block .item.about p {
+    margin: 0;
+    margin-right: 45px;
+  }
+  .wrapper section.companies .content .block .item.about .str {
+    position: unset;
+  }
+}
+@media (max-width: 550px) {
+  .wrapper .content {
+    width: calc(100% - 30px);
+  }
+  .wrapper section.companies .content p.title {
+    font-size: 18px;
+  }
+  .wrapper section.companies .content .block .item img {
+    max-height: 45px;
+  }
+  .wrapper section.main_banner {
+    height: 530px;
+  }
+  .wrapper section.main_banner .content .slide-count {
+    height: 190px;
+    top: 157px;
+  }
+  .wrapper section.main_banner .content .slide-count::before {
+    height: 130px;
+  }
+  .wrapper section.main_banner .content .slide-count p {
+    font-size: 14px;
+  }
+  .wrapper section.main_banner .content a.str_down {
+    width: 8px;
+    height: 79px;
+    background-size: contain;
+  }
+  .wrapper section.main_banner .slider .item .content .text {
+    margin-left: 50px;
+    padding-top: 150px;
+  }
+  .wrapper section.main_banner .slider .item .content .text h1 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .wrapper section.main_banner .slider .item .content .text h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .wrapper section.news_main .content h3 {
+    font-size: 18px;
+  }
+  .wrapper section.news_main .content .block .left {
+    margin-bottom: 30px;
+  }
+  .wrapper section.news_main .content .block .left a.img {
+    padding: 30px;
+    width: calc(100% - 60px);
+    min-height: 340px;
+  }
+  .wrapper section.news_main .content .block .left a.img p.one {
+    font-size: 16px;
+  }
+  .wrapper section.news_main .content .block .left a.img p.two {
+    font-size: 14px;
+  }
+  .wrapper section.news_main .content .block .right {
+    align-items: center;
+  }
+  .wrapper section.news_main .content .block .right a.item.item:first-child + a {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .wrapper section.news_main .content .block .right a.item.item:first-child + a::before {
+    content: none;
+  }
+  .wrapper section.news_main .content .block .right a.item p.one {
+    font-size: 16px;
+  }
+  .wrapper section.news_main .content .block .right a.item p.two {
+    font-size: 14px;
+  }
+  .wrapper section.block_img .content .block .right,
+  .wrapper section.block_img .content .block .left {
+    width: calc(100% - 80px);
+  }
+  .wrapper footer .content .block .col {
+    width: 100%;
+  }
+  .wrapper footer .content .block .col:last-child {
+    transform: translate(0, -50px);
+  }
+  .wrapper footer .content .block .col a.copyright {
+    margin-top: 75px;
+  }
+  .wrapper footer .content .block .col a.phone {
+    position: relative;
+    top: 130px;
   }
 }
