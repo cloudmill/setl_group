@@ -38,10 +38,18 @@
   width: 1240px;
   margin: auto;
 }
+.wrapper .scroll_box {
+  width: 1240px;
+  margin: auto;
+}
 .wrapper ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.wrapper .slick-next::before,
+.wrapper .slick-prev::before {
+  content: none;
 }
 body {
   margin: 0;
@@ -296,6 +304,10 @@ body {
 .wrapper section.main_banner .slider .slick-next:hover,
 .wrapper section.main_banner .slider .slick-prev:hover {
   margin-right: -10px;
+}
+.wrapper section.main_banner .slider .slick-next::before,
+.wrapper section.main_banner .slider .slick-prev::before {
+  content: none;
 }
 .wrapper section.main_banner .slider .slick-prev {
   transform: rotate(180deg) translate(-565px, 0);
@@ -608,13 +620,8 @@ body {
   align-items: center;
 }
 .wrapper section.news_main .content .navigation ul li {
-  width: 55px;
-  height: 55px;
   border: 1px solid transparent;
   margin-right: 17px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .wrapper section.news_main .content .navigation ul li.active {
   border: 1px solid #ea0013;
@@ -623,6 +630,11 @@ body {
   color: #ea0013;
 }
 .wrapper section.news_main .content .navigation ul li a {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #232323;
   font-family: "Apercu Pro";
   font-size: 20px;
@@ -866,7 +878,7 @@ body {
   min-width: 100%;
   min-height: 100%;
 }
-.wrapper section.page_title.has_bg .content ul.sub_menu.mini li a {
+.wrapper section.page_title.has_bg .scroll_box ul.sub_menu.mini li a {
   color: white;
 }
 .wrapper section.page_title.has_bg p {
@@ -903,41 +915,41 @@ body {
   font-weight: 400;
   line-height: 36px;
 }
-.wrapper section.page_title .content ul.sub_menu {
+.wrapper section.page_title .scroll_box ul.sub_menu {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 80px;
 }
-.wrapper section.page_title .content ul.sub_menu.mini {
+.wrapper section.page_title .scroll_box ul.sub_menu.mini {
   margin-top: -45px;
   justify-content: flex-start;
 }
-.wrapper section.page_title .content ul.sub_menu.mini.space_b {
+.wrapper section.page_title .scroll_box ul.sub_menu.mini.space_b {
   justify-content: space-between;
 }
-.wrapper section.page_title .content ul.sub_menu.mini li {
-  margin-right: 25px;
+.wrapper section.page_title .scroll_box ul.sub_menu.mini li {
   max-width: 210px;
 }
-.wrapper section.page_title .content ul.sub_menu.mini li a {
+.wrapper section.page_title .scroll_box ul.sub_menu.mini li a {
+  margin-right: 25px;
   color: black;
 }
-.wrapper section.page_title .content ul.sub_menu li {
+.wrapper section.page_title .scroll_box ul.sub_menu li {
   position: relative;
   cursor: pointer;
   min-width: 85px;
 }
-.wrapper section.page_title .content ul.sub_menu li.active {
+.wrapper section.page_title .scroll_box ul.sub_menu li.active {
   cursor: default;
 }
-.wrapper section.page_title .content ul.sub_menu li.active:before {
+.wrapper section.page_title .scroll_box ul.sub_menu li.active:before {
   width: 41px;
 }
-.wrapper section.page_title .content ul.sub_menu li.active a {
+.wrapper section.page_title .scroll_box ul.sub_menu li.active a {
   color: #ea0013;
 }
-.wrapper section.page_title .content ul.sub_menu li:before {
+.wrapper section.page_title .scroll_box ul.sub_menu li:before {
   content: "";
   display: block;
   width: 0;
@@ -948,13 +960,13 @@ body {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   left: 0;
 }
-.wrapper section.page_title .content ul.sub_menu li:hover:before {
+.wrapper section.page_title .scroll_box ul.sub_menu li:hover:before {
   width: 41px;
 }
-.wrapper section.page_title .content ul.sub_menu li:hover a {
+.wrapper section.page_title .scroll_box ul.sub_menu li:hover a {
   color: #ea0013;
 }
-.wrapper section.page_title .content ul.sub_menu li a {
+.wrapper section.page_title .scroll_box ul.sub_menu li a {
   color: #232323;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-family: "Apercu Pro";
@@ -1177,6 +1189,7 @@ body {
   align-items: flex-start;
   padding: 48px;
   flex-basis: 310px;
+  min-width: 250px;
   border-right: 1px solid #dddddd;
   background-color: #f7f7f7;
 }
@@ -1228,7 +1241,7 @@ body {
 .wrapper section.indicators .content {
   position: relative;
 }
-.wrapper section.indicators .content p.titile {
+.wrapper section.indicators .content p.title {
   color: #232323;
   font-family: "Apercu Pro";
   font-size: 35px;
@@ -1239,7 +1252,8 @@ body {
   display: flex;
 }
 .wrapper section.indicators .content .block table.titles {
-  width: 414px;
+  width: 420px;
+  min-width: 280px;
 }
 .wrapper section.indicators .content .block table.titles tr {
   height: 61px;
@@ -1309,6 +1323,10 @@ body {
 .wrapper section.indicators .content .block .slider .slick-prev:hover {
   margin-right: -10px;
 }
+.wrapper section.indicators .content .block .slider .slick-next::before,
+.wrapper section.indicators .content .block .slider .slick-prev::before {
+  content: none;
+}
 .wrapper section.indicators .content .block .slider .slick-list {
   width: 100%;
 }
@@ -1344,7 +1362,6 @@ body {
   flex-wrap: wrap;
   position: relative;
   align-items: center;
-  padding-right: 40px;
   border-bottom: 0;
 }
 .wrapper section.drop_down_lists .content .item:last-child {
@@ -1355,22 +1372,20 @@ body {
   height: auto;
   display: block;
 }
-.wrapper section.drop_down_lists .content .item.open p.num {
-  border-bottom: 1px solid #dddddd;
+.wrapper section.drop_down_lists .content .item.open .list p {
+  border-top: 1px solid #ddd;
 }
-.wrapper section.drop_down_lists .content .item.open p.title {
-  border-bottom: 1px solid #dddddd;
+.wrapper section.drop_down_lists .content .item.open p.num {
+  color: #ed1f30;
 }
 .wrapper section.drop_down_lists .content .item.open .plus:after {
   transform: rotate(135deg);
-}
-.wrapper section.drop_down_lists .content .item.open .plus:before {
-  opacity: 1;
 }
 .wrapper section.drop_down_lists .content .item .plus {
   width: 24px;
   height: 24px;
   min-width: 24px;
+  margin-right: 40px;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   flex-basis: 24px;
   position: relative;
@@ -1388,18 +1403,6 @@ body {
   top: 0;
   left: 0;
   cursor: pointer;
-}
-.wrapper section.drop_down_lists .content .item .plus:before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -41px;
-  width: 64px;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  opacity: 0;
-  left: 0;
-  background-color: #dddddd;
-  height: 1px;
 }
 .wrapper section.drop_down_lists .content .item p {
   display: block;
@@ -1426,7 +1429,7 @@ body {
   min-height: 105px;
 }
 .wrapper section.drop_down_lists .content .item p.title {
-  flex-basis: calc(100% - 165px);
+  flex-basis: calc(100% - 205px);
   padding: 40px 0;
   padding-left: 40px;
   justify-content: flex-start;
@@ -1442,8 +1445,9 @@ body {
 }
 .wrapper section.drop_down_lists .content .item .list p {
   color: #232323;
-  margin: 30px 0;
-  margin-left: 140px;
+  margin: 0;
+  padding: 30px 0;
+  padding-left: 140px;
   justify-content: flex-start;
   font-family: "Apercu Pro";
   font-size: 17px;
@@ -1562,22 +1566,25 @@ body {
   padding: 0;
 }
 .wrapper section.social .content ul li {
+  margin-left: 20px;
+}
+.wrapper section.social .content ul li:hover a {
+  border-color: transparent;
+  background-color: #ea0013;
+  cursor: pointer;
+}
+.wrapper section.social .content ul li:hover a img {
+  filter: brightness(0) invert(2);
+}
+.wrapper section.social .content ul li a {
+  display: flex;
   width: 47px;
   min-width: 47px;
   height: 47px;
   border: 1px solid #ea0013;
-  margin-left: 20px;
-  display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.wrapper section.social .content ul li:hover {
-  border-color: transparent;
-  background-color: #ea0013;
-}
-.wrapper section.social .content ul li:hover a img {
-  filter: brightness(0) invert(2);
 }
 .wrapper section.social .content ul li a img {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
