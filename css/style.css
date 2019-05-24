@@ -312,9 +312,11 @@ body {
 .wrapper section.main_banner .slider .slick-prev {
   transform: rotate(180deg) translate(-565px, 0);
   top: 274px;
+  right: auto;
+  left: 50%;
 }
 .wrapper section.main_banner .slider .slick-prev:hover {
-  margin-right: 10px;
+  margin-left: -10px;
 }
 .wrapper section.main_banner a.projects {
   position: absolute;

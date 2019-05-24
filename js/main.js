@@ -71,7 +71,6 @@ sliders_init = function(){
         slidesToShow: 1, 
         slidesToScroll: 1,
         speed: 500,
-        swipe: false,
         arrows: false,
         dots : false,
         fade: false,
@@ -146,16 +145,16 @@ drag_add_drop_init = function(){
       drag_add_drop_vertical($('.scroll_box .sub_menu'))
     }, 10);
   }
-  $(document).on('load','.scroll_box .sub_menu',()=>{
+  /* $(document).on('load','.scroll_box .sub_menu',()=>{
     drag_add_drop_vertical($('.scroll_box .sub_menu'))
-  })
+  }) */
 }
 drag_add_drop_vertical = function(el){
   var press = false,
   move = false,
   begin_pos_x = 0,
   cur_pos_x = 0,
-  lenght_stop = 80,
+  lenght_stop = 10,
   width = 0,
   right = false,
   temp_d = 0,
@@ -201,12 +200,14 @@ drag_add_drop_vertical = function(el){
     cur_pos_x = event.x
   })
   $(document).on('mouseup',function(e){
-    x = event.x;
-    d = right ? -lenght_stop : lenght_stop
-    begin_pos_x += d 
+    if(move){
+      x = event.x;
+      d = right ? -lenght_stop : lenght_stop
+      begin_pos_x += d 
+    }
     el.parent().animate({
       scrollLeft: begin_pos_x
-    },300,'linear',function(){
+    },100,'linear',function(){
       begin_pos_x = el.parent().scrollLeft()
       press = false;
       move = false;
