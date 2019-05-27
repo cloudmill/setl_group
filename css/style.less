@@ -747,46 +747,14 @@ body {
         .block {
           height: 550px;
           display: flex;
-          div {
+          .left,.right {
             width: 50%;
             height: ~"calc(100% - 150px)";
             padding: 75px;
             position: relative;
             padding-right: 0;
             overflow: hidden;
-            &.left {
-              p {
-                &.two {
-                  margin-right: 150px;
-                }
-              }
-            }
-            &.right {
-              position: relative;
-              left: -1px;
-              bottom: 100px;
-              &:before {
-                content: "";
-                bottom: 0;
-                right: 0;
-                opacity: 0.5;
-                position: absolute;
-                background-image: url(../images/light_red.png);
-                background-position: right bottom;
-                background-repeat: no-repeat;
-                z-index: 1;
-                display: block;
-                width: 100%;
-                height: 100%;
-              }
-              p {
-                position: relative;
-                z-index: 3;
-                &.two {
-                  margin-right: 60px;
-                }
-              }
-            }
+            
             .str {
               position: absolute;
               bottom: 50px;
@@ -818,6 +786,39 @@ body {
                 font-size: 23px;
                 font-weight: 500;
                 line-height: 30px;
+              }
+            }
+          }
+          .left {
+            p {
+              &.two {
+                margin-right: 150px;
+              }
+            }
+          }
+          .right {
+            position: relative;
+            left: -1px;
+            bottom: 100px;
+            &:before {
+              content: "";
+              bottom: 0;
+              right: 0;
+              opacity: 0.5;
+              position: absolute;
+              background-image: url(../images/light_red.png);
+              background-position: right bottom;
+              background-repeat: no-repeat;
+              z-index: 1;
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+            p {
+              position: relative;
+              z-index: 3;
+              &.two {
+                margin-right: 60px;
               }
             }
           }
@@ -1693,21 +1694,13 @@ body {
             width: ~"calc((100% - 40px)/3)";
             position: relative;
             height: 323px;
-            &:first-child {
+            &:nth-child(5n-4) {
               width: ~"calc(50% - 10px + 92px)";
               height: 500px;
-              & + .item {
-                width: ~"calc(50% - 10px - 92px)";
-                height: 500px;
-              }
             }
-            &:nth-child(6) {
-              width: ~"calc(50% - 10px + 92px)";
+            &:nth-child(5n-3) {
+              width: ~"calc(50% - 10px - 92px)";
               height: 500px;
-              & + .item {
-                width: ~"calc(50% - 10px - 92px)";
-                height: 500px;
-              }
             }
             img {
               position: absolute;

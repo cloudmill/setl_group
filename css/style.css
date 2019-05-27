@@ -708,7 +708,8 @@ body {
   height: 550px;
   display: flex;
 }
-.wrapper section.block_img .content .block div {
+.wrapper section.block_img .content .block .left,
+.wrapper section.block_img .content .block .right {
   width: 50%;
   height: calc(100% - 150px);
   padding: 75px;
@@ -716,15 +717,53 @@ body {
   padding-right: 0;
   overflow: hidden;
 }
-.wrapper section.block_img .content .block div.left p.two {
+.wrapper section.block_img .content .block .left .str,
+.wrapper section.block_img .content .block .right .str {
+  position: absolute;
+  bottom: 50px;
+  left: 75px;
+  z-index: 2;
+}
+.wrapper section.block_img .content .block .left img,
+.wrapper section.block_img .content .block .right img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 105%;
+  height: auto;
+  min-height: 100%;
+}
+.wrapper section.block_img .content .block .left p,
+.wrapper section.block_img .content .block .right p {
+  margin: 0;
+}
+.wrapper section.block_img .content .block .left p.one,
+.wrapper section.block_img .content .block .right p.one {
+  color: #ffffff;
+  font-family: "Apercu Pro";
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 100.01px;
+  margin-bottom: 40px;
+}
+.wrapper section.block_img .content .block .left p.two,
+.wrapper section.block_img .content .block .right p.two {
+  color: #ffffff;
+  font-family: Spectral;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.wrapper section.block_img .content .block .left p.two {
   margin-right: 150px;
 }
-.wrapper section.block_img .content .block div.right {
+.wrapper section.block_img .content .block .right {
   position: relative;
   left: -1px;
   bottom: 100px;
 }
-.wrapper section.block_img .content .block div.right:before {
+.wrapper section.block_img .content .block .right:before {
   content: "";
   bottom: 0;
   right: 0;
@@ -738,45 +777,12 @@ body {
   width: 100%;
   height: 100%;
 }
-.wrapper section.block_img .content .block div.right p {
+.wrapper section.block_img .content .block .right p {
   position: relative;
   z-index: 3;
 }
-.wrapper section.block_img .content .block div.right p.two {
+.wrapper section.block_img .content .block .right p.two {
   margin-right: 60px;
-}
-.wrapper section.block_img .content .block div .str {
-  position: absolute;
-  bottom: 50px;
-  left: 75px;
-  z-index: 2;
-}
-.wrapper section.block_img .content .block div img {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 105%;
-  height: auto;
-  min-height: 100%;
-}
-.wrapper section.block_img .content .block div p {
-  margin: 0;
-}
-.wrapper section.block_img .content .block div p.one {
-  color: #ffffff;
-  font-family: "Apercu Pro";
-  font-size: 90px;
-  font-weight: 500;
-  line-height: 100.01px;
-  margin-bottom: 40px;
-}
-.wrapper section.block_img .content .block div p.two {
-  color: #ffffff;
-  font-family: Spectral;
-  font-size: 23px;
-  font-weight: 500;
-  line-height: 30px;
 }
 .wrapper section.block_img .content .big_figure {
   bottom: -75px;
@@ -1608,19 +1614,11 @@ body {
   position: relative;
   height: 323px;
 }
-.wrapper section.projects .content .block .item:first-child {
+.wrapper section.projects .content .block .item:nth-child(5n-4) {
   width: calc(50% - 10px + 92px);
   height: 500px;
 }
-.wrapper section.projects .content .block .item:first-child + .item {
-  width: calc(50% - 10px - 92px);
-  height: 500px;
-}
-.wrapper section.projects .content .block .item:nth-child(6) {
-  width: calc(50% - 10px + 92px);
-  height: 500px;
-}
-.wrapper section.projects .content .block .item:nth-child(6) + .item {
+.wrapper section.projects .content .block .item:nth-child(5n-3) {
   width: calc(50% - 10px - 92px);
   height: 500px;
 }

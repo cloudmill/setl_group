@@ -14,7 +14,8 @@
   .wrapper section.block_img .content .block {
     height: auto;
   }
-  .wrapper section.block_img .content .block div {
+  .wrapper section.block_img .content .block .left,
+  .wrapper section.block_img .content .block .right {
     height: auto;
     min-height: 320px;
     padding-bottom: 80px;
@@ -70,11 +71,13 @@
   .wrapper section.block_img .content p.sect-title {
     font-size: 75px;
   }
-  .wrapper section.block_img .content .block div p.one {
+  .wrapper section.block_img .content .block .left p.one,
+  .wrapper section.block_img .content .block .right p.one {
     font-size: 70px;
     line-height: 70px;
   }
-  .wrapper section.block_img .content .block div p.two {
+  .wrapper section.block_img .content .block .left p.two,
+  .wrapper section.block_img .content .block .right p.two {
     font-size: 18px;
   }
   .wrapper section.main_banner .slider .slick-prev {
@@ -232,15 +235,17 @@
   .wrapper section.block_img .content .big_figure {
     right: -32px;
   }
-  .wrapper section.block_img .content .block div {
+  .wrapper section.block_img .content .block .left,
+  .wrapper section.block_img .content .block .right {
     padding: 60px;
   }
-  .wrapper section.block_img .content .block div p.one {
+  .wrapper section.block_img .content .block .left p.one,
+  .wrapper section.block_img .content .block .right p.one {
     font-size: 60px;
     line-height: 55px;
   }
-  .wrapper section.block_img .content .block div.left p.two,
-  .wrapper section.block_img .content .block div.right p.two {
+  .wrapper section.block_img .content .block .left p.two,
+  .wrapper section.block_img .content .block .right p.two {
     margin-right: 0;
   }
   .wrapper section.page_title {
@@ -628,24 +633,27 @@
     flex-direction: column;
     height: auto;
   }
-  .wrapper section.block_img .content .block div {
+  .wrapper section.block_img .content .block .left,
+  .wrapper section.block_img .content .block .right {
     width: auto;
     min-height: 200px;
     padding: 30px;
     padding-bottom: 80px;
   }
-  .wrapper section.block_img .content .block div.right {
-    bottom: 0;
-    left: 20px;
-  }
-  .wrapper section.block_img .content .block div p.one {
+  .wrapper section.block_img .content .block .left p.one,
+  .wrapper section.block_img .content .block .right p.one {
     font-size: 40px;
     font-weight: 500;
     line-height: 46.78px;
   }
-  .wrapper section.block_img .content .block div p.two {
+  .wrapper section.block_img .content .block .left p.two,
+  .wrapper section.block_img .content .block .right p.two {
     font-size: 14px;
     line-height: 18px;
+  }
+  .wrapper section.block_img .content .block .right {
+    bottom: 0;
+    left: 20px;
   }
   .wrapper section.block_img .content .big_figure {
     width: 99px;

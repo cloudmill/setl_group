@@ -21,7 +21,7 @@
       &.block_img .content{
         .block {
           height: auto;
-          div{
+          .left,.right{
             height: auto;
             min-height: 320px;
             padding-bottom: 80px;
@@ -102,7 +102,7 @@
           font-size: 75px;
         }
         .block{
-          div{
+          .left,.right{
             p{
               &.one{
                 font-size: 70px;
@@ -310,20 +310,17 @@
           right: -32px;
         }
         .block{
-          div{
+          .left,.right{
             padding: 60px;
-            p.one{
-              font-size: 60px;
-              line-height: 55px;
-            }
-            &.left,&.right{
-              p{
-                &.two{
-                  margin-right: 0;
-                }
+            p{
+              &.one{
+                font-size: 60px;
+                line-height: 55px;
+              }
+              &.two{
+                margin-right: 0;
               }
             }
-            
           }
         }
       }
@@ -805,15 +802,11 @@
         .block{
           flex-direction: column;
           height: auto;
-          div{
+          .left,.right{
             width: auto;
             min-height: 200px;
             padding: 30px;
             padding-bottom: 80px;
-            &.right{
-              bottom: 0;
-              left: 20px;
-            }
             p{
               &.one{
                 font-size: 40px;
@@ -825,6 +818,10 @@
                 line-height: 18px;
               }
             }
+          }
+          .right{
+            bottom: 0;
+            left: 20px;
           }
         }
         .big_figure{
