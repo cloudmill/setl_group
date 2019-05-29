@@ -73,10 +73,13 @@ body {
 .wrapper header.black .content .menu_list ul li a {
   color: #232323;
 }
-.wrapper header.black .content .search {
+.wrapper header.black .content .search:after {
   background-image: url(../images/search_black.png);
 }
 .wrapper header.black .content .lang a {
+  color: #232323;
+}
+.wrapper header.black .content .lang a:hover {
   color: #232323;
 }
 .wrapper header.black .content .popup_menu a.menu_open {
@@ -120,6 +123,10 @@ body {
   font-size: 17px;
   font-weight: 400;
   line-height: 30px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper header .content .menu_list ul li a:hover {
+  color: #ea0013;
 }
 .wrapper header .content .search {
   display: flex;
@@ -127,7 +134,40 @@ body {
   width: 17px;
   height: 17px;
   min-width: 17px;
+  position: relative;
+  cursor: pointer;
   margin-right: 120px;
+}
+.wrapper header .content .search:hover::before {
+  opacity: 1;
+}
+.wrapper header .content .search:hover:after {
+  opacity: 0;
+}
+.wrapper header .content .search:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-repeat: no-repeat;
+  background-position: top left;
+  opacity: 0;
+  background-size: 100% 100%;
+  background-image: url(../images/search_red.png);
+}
+.wrapper header .content .search:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
   background-image: url(../images/search.png);
   background-repeat: no-repeat;
   background-position: top left;
@@ -145,9 +185,16 @@ body {
   font-family: "Apercu Pro";
   font-size: 15px;
   font-weight: 400;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper header .content .lang a:hover {
+  color: #ea0013;
 }
 .wrapper header .content .lang a.active {
   border-bottom: 3px solid #ea0013;
+}
+.wrapper header .content .lang a.active:hover {
+  color: #ffffff;
 }
 .wrapper header .content .popup_menu {
   display: flex;
@@ -161,10 +208,23 @@ body {
   display: flex;
   position: relative;
   align-items: center;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper header .content .popup_menu a.menu_open:hover {
+  color: #ea0013;
+}
+.wrapper header .content .popup_menu a.menu_open:hover:before {
+  margin-top: 10px;
+  background-color: #ea0013;
+}
+.wrapper header .content .popup_menu a.menu_open:hover:after {
+  transform: translate(0, -6px);
+  background-color: #ea0013;
 }
 .wrapper header .content .popup_menu a.menu_open:before {
   content: "";
   display: block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   margin-right: 15px;
   height: 2px;
   width: 27px;
@@ -174,11 +234,12 @@ body {
 .wrapper header .content .popup_menu a.menu_open:after {
   content: "";
   position: absolute;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   height: 2px;
   width: 27px;
   left: 0;
   top: 50%;
-  transform: translate(0, -2.5px);
+  transform: translate(0, -3px);
   background-color: #fff;
 }
 .wrapper section.main_banner {
@@ -335,11 +396,15 @@ body {
   background-repeat: no-repeat;
   background-size: calc(100% - 56px) calc(100% - 65px);
   background-color: #ea0013;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .wrapper section.main_banner a.projects .str {
   top: 50%;
   margin-top: 30px;
   left: 100px;
+}
+.wrapper section.main_banner a.projects:hover {
+  background-color: #000;
 }
 .wrapper section.news_main {
   overflow: hidden;
@@ -393,6 +458,21 @@ body {
   overflow: hidden;
   position: relative;
 }
+.wrapper section.news_main .content .block .left a.img:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 0;
+  background-color: rgba(234, 0, 19, 0.88);
+}
+.wrapper section.news_main .content .block .left a.img:hover:before {
+  opacity: 1;
+}
 .wrapper section.news_main .content .block .left a.img img {
   position: absolute;
   z-index: -1;
@@ -406,6 +486,8 @@ body {
 .wrapper section.news_main .content .block .left a.img p {
   color: #ffffff;
   font-family: "Apercu Pro";
+  position: relative;
+  z-index: 2;
 }
 .wrapper section.news_main .content .block .left a.img p.one {
   font-size: 20px;
@@ -444,9 +526,13 @@ body {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 25px;
   display: block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.news_main .content .block .right a.item:hover {
+  border-bottom: 1px solid #ea0013;
 }
 .wrapper section.news_main .content .block .right a.item:first-child + a {
-  border: none;
+  border-bottom: 1px solid transparent;
   position: relative;
   margin-bottom: 80px;
 }
@@ -458,7 +544,10 @@ body {
   height: 1px;
   background-color: #ea0013;
   left: 0;
-  bottom: -13px;
+  bottom: -1px;
+}
+.wrapper section.news_main .content .block .right a.item:first-child + a:hover {
+  border-bottom: 1px solid #ea0013;
 }
 .wrapper section.news_main .content .block .right a.item p {
   color: #232323;
@@ -488,8 +577,13 @@ body {
   font-family: "Apercu Pro";
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
   padding-bottom: 3px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.news_main .content .block .right a.all:hover {
+  color: #ea0013;
+  border-bottom: 2px solid #ea0013;
 }
 .wrapper section.news_main .content .block.news_page {
   margin-left: 200px;
@@ -526,6 +620,10 @@ body {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 25px;
   display: block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.news_main .content .list a.item:hover {
+  border-bottom: 1px solid #ea0013;
 }
 .wrapper section.news_main .content .list a.item p {
   color: #232323;
@@ -682,7 +780,12 @@ body {
   border-right: 0;
   margin-bottom: 120px;
   font-size: 15px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-weight: 500;
+}
+.wrapper section.block_img .content a.proj:hover {
+  background-color: #f3001b;
+  color: #fff;
 }
 .wrapper section.block_img .content a.proj:before {
   content: "";
@@ -848,12 +951,16 @@ body {
   position: relative;
   justify-content: flex-start;
 }
+.wrapper section.companies .content .block .item.about:hover p {
+  color: #ea0013;
+}
 .wrapper section.companies .content .block .item.about p {
   color: #232323;
   margin-top: 0;
   font-family: "Apercu Pro";
   font-size: 25px;
   font-weight: 500;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   margin-left: 30%;
   max-width: 132px;
 }
@@ -1003,6 +1110,13 @@ body {
   position: relative;
   margin-bottom: 20px;
   flex-basis: calc((100% - 40px)/2);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.fin_report .content .block .item:hover {
+  border: 1px solid #ea0013;
+}
+.wrapper section.fin_report .content .block .item:hover .str::before {
+  opacity: 1;
 }
 .wrapper section.fin_report .content .block .item:before {
   content: "";
@@ -1046,7 +1160,20 @@ body {
 }
 .wrapper section.fin_report .content .block .item .str {
   bottom: 27px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   right: 30px;
+}
+.wrapper section.fin_report .content .block .item .str::before {
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  content: '';
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  background-size: contain;
+  background-image: url(../images/str_red.png);
 }
 .wrapper section.block_text {
   margin-bottom: 100px;
@@ -1085,6 +1212,11 @@ body {
   font-size: 22px;
   font-weight: 400;
   line-height: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.block_text .content a.red:hover {
+  border-bottom: 2px solid #ea0013;
 }
 .wrapper section.block_text .block_left_img {
   margin-left: 200px;
@@ -1513,6 +1645,10 @@ body {
   font-weight: 500;
   top: 0;
   left: 0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.news_detail .content a.back:hover {
+  color: #ea0013;
 }
 .wrapper section.news_detail .content a.back:before {
   content: "";
@@ -1614,6 +1750,34 @@ body {
   position: relative;
   height: 323px;
 }
+.wrapper section.projects .content .block .item:hover::before,
+.wrapper section.projects .content .block .item:hover:after {
+  opacity: 1;
+}
+.wrapper section.projects .content .block .item:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  left: 0;
+  background-color: rgba(234, 0, 19, 0.7);
+  position: absolute;
+}
+.wrapper section.projects .content .block .item:before {
+  content: '';
+  display: block;
+  height: 150px;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ea0013;
+  position: absolute;
+}
 .wrapper section.projects .content .block .item:nth-child(5n-4) {
   width: calc(50% - 10px + 92px);
   height: 500px;
@@ -1637,6 +1801,7 @@ body {
 .wrapper section.projects .content .block .item p {
   margin: 0;
   position: absolute;
+  z-index: 2;
 }
 .wrapper section.projects .content .block .item p.one {
   color: #ffffff;
@@ -1656,6 +1821,7 @@ body {
 }
 .wrapper section.projects .content .block .item .str {
   bottom: 60px;
+  z-index: 2;
   right: 60px;
 }
 .wrapper section.projects .content .midlle_figure {
@@ -2255,6 +2421,305 @@ body {
   background-image: url(../images/str_sl_left.png);
   margin-left: -20px;
 }
+.wrapper section.img_left {
+  position: relative;
+}
+.wrapper section.img_left .img {
+  width: 50%;
+  min-width: 960px;
+  height: 700px;
+  position: absolute;
+  top: 130px;
+  right: 50%;
+}
+.wrapper section.img_left .img img {
+  height: 100%;
+  width: 100%;
+}
+.wrapper section.img_left .content {
+  position: relative;
+}
+.wrapper section.img_left .content .title {
+  margin: 0;
+  margin-bottom: 80px;
+  margin-left: calc(50% - 200px);
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 72px;
+}
+.wrapper section.img_left .content .one {
+  margin: 0;
+  margin-left: calc(50% + 100px);
+  color: #232323;
+  font-family: Spectral;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+}
+.wrapper section.img_left .content .one a {
+  text-decoration: none;
+  color: #ea0013;
+}
+.wrapper section.img_left .content .line {
+  height: 1px;
+  background-color: #ea0013;
+  margin: 30px 0;
+  margin-left: calc(50% - 200px);
+  width: 50%;
+}
+.wrapper section.img_left .content .midlle_figure {
+  top: 18px;
+  left: 0;
+  position: absolute;
+}
+.wrapper section.about .content {
+  position: relative;
+}
+.wrapper section.about .content .block {
+  background-color: #2e2e2e;
+  position: absolute;
+  top: -200px;
+  left: 0;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 330px;
+  max-width: 50%;
+}
+.wrapper section.about .content .block p {
+  color: #ffffff;
+  z-index: 3;
+  position: relative;
+  font-family: Spectral;
+  font-size: 35px;
+  margin: 0;
+  font-weight: 400;
+  line-height: 46.01px;
+}
+.wrapper section.about .content .block p.date {
+  color: #707070;
+  font-family: "Apercu Pro";
+  font-size: 20px;
+  font-style: italic;
+}
+.wrapper section.about .content .num {
+  margin: 110px 0;
+  position: relative;
+  z-index: 2;
+  margin-left: calc(50% - 200px);
+  display: flex;
+  align-items: flex-start;
+}
+.wrapper section.about .content .num span {
+  right: 0;
+  top: 0;
+  color: #2e2e2e;
+  font-family: "Apercu Pro";
+  font-size: 60px;
+  font-weight: 500;
+}
+.wrapper section.about_map {
+  margin-top: 180px;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 360px;
+}
+.wrapper section.about_map .content .row {
+  z-index: -3;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.wrapper section.about_map .content .row .big {
+  color: #ed2233;
+  font-family: "Apercu Pro";
+  font-size: 390px;
+  font-weight: 500;
+}
+.wrapper section.about_map .content .row .col {
+  height: 280px;
+  margin-left: 60px;
+  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+.wrapper section.about_map .content .row .col p {
+  margin: 0;
+}
+.wrapper section.about_map .content .row .col p.red_small {
+  color: #ed2233;
+  font-family: Spectral;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+}
+.wrapper section.about_map .content .row .col p.one {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+.wrapper section.about_map .content .row .col p.two {
+  color: #232323;
+  font-family: Spectral;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+}
+.wrapper section.about_map .content .block {
+  margin-top: 200px;
+  margin-left: 200px;
+  margin-right: 100px;
+  position: relative;
+  z-index: 2;
+}
+.wrapper section.about_map .content .block + .block {
+  margin-right: 0;
+  margin-left: calc(50% + 100px);
+}
+.wrapper section.about_map .content .block + .block p.one:before {
+  right: auto;
+  left: 200px;
+}
+.wrapper section.about_map .content .block p {
+  margin: 0;
+}
+.wrapper section.about_map .content .block p.one {
+  color: #232323;
+  position: relative;
+  font-family: "Apercu Pro";
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 72px;
+  margin-bottom: 50px;
+}
+.wrapper section.about_map .content .block p.one::before {
+  content: '';
+  display: block;
+  width: 2000px;
+  height: 1px;
+  background-color: #ea0013;
+  position: absolute;
+  bottom: -25px;
+  left: auto;
+  right: calc(100% - 200px);
+}
+.wrapper section.about_map .content .block p.two {
+  color: #232323;
+  font-family: Spectral;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+}
+.wrapper section.about_map .city {
+  position: absolute;
+  top: 280px;
+  z-index: -1;
+  left: 0;
+  width: 100%;
+  min-height: 1426px;
+  background-image: url(../images/bouldings_about.png);
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.wrapper section.about_map .map {
+  width: 125%;
+  position: absolute;
+  left: 200px;
+  height: 80vw;
+  bottom: 0;
+  background-image: url(../images/map_about.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+.wrapper section.about_map .map .points {
+  position: absolute;
+  left: 0.8vw;
+  z-index: 10;
+  bottom: 18.4vw;
+  width: 29%;
+  background-image: url(../images/map_points_about.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  height: 34vw;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper section.about_map .map .points:hover {
+  transform: translate(4px, 2px);
+}
+.wrapper section.prizes {
+  margin-bottom: 100px;
+}
+.wrapper section.prizes .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wrapper section.prizes .content .item {
+  width: calc(50% - 22px);
+  border: 1px solid #dddddd;
+  display: flex;
+  min-height: 300px;
+  margin-bottom: 35px;
+}
+.wrapper section.prizes .content .item .img {
+  flex-basis: 270px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.wrapper section.prizes .content .item .img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+.wrapper section.prizes .content .item .text {
+  flex-basis: calc(100% - 270px - 82px);
+  padding: 40px;
+  position: relative;
+}
+.wrapper section.prizes .content .item .text p {
+  margin: 0;
+}
+.wrapper section.prizes .content .item .text p.one {
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.wrapper section.prizes .content .item .text p.two {
+  color: #232323;
+  font-family: Spectral;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.wrapper section.prizes .content .item .text p.date {
+  color: #b3b3b3;
+  font-family: "Spectral - Medium Italic";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  position: absolute;
+  bottom: 20px;
+}
 .wrapper footer {
   overflow: hidden;
 }
@@ -2412,7 +2877,7 @@ body {
 .str.black {
   background-image: url(../images/str_black.png);
   width: 48px;
-  height: 11px;
+  height: 13px;
 }
 .str.return {
   background-image: url(../images/str_return.png);

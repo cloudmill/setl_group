@@ -30,6 +30,12 @@
   .wrapper section.overseas_projects .content .left .midlle_figure {
     bottom: -120px;
   }
+  .wrapper section.about_map .content .row .big {
+    font-size: 320px;
+  }
+  .wrapper section.about_map .content .row .col {
+    height: 230px;
+  }
 }
 @media (max-width: 1240px) {
   .wrapper .content {
@@ -166,6 +172,69 @@
   .wrapper section.bosses .content .row .block .item .text {
     position: unset;
     margin-top: 28px;
+  }
+  .wrapper section.img_left .img {
+    width: 95%;
+    min-width: auto;
+    height: 53vw;
+    top: calc(70px + 20vw);
+    right: 5%;
+  }
+  .wrapper section.img_left .content p.title {
+    margin-bottom: calc(200px + 54vw);
+    font-size: 35px;
+    line-height: 50px;
+    margin-left: 0;
+  }
+  .wrapper section.img_left .content .midlle_figure {
+    width: 20vw;
+    height: 20vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: calc(70px + 10vw);
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .wrapper section.img_left .content p.one {
+    margin-left: 0;
+  }
+  .wrapper section.img_left .content .line {
+    margin-left: 0;
+  }
+  .wrapper section.about_map {
+    padding-bottom: 100px;
+  }
+  .wrapper section.about_map .content .row {
+    z-index: 4;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .wrapper section.about_map .content .row .col {
+    height: auto;
+    position: unset;
+    margin-top: 50px;
+    width: 50%;
+  }
+  .wrapper section.about_map .content .row .col p.red_small {
+    width: 120px;
+    left: auto;
+    top: 25px;
+    right: 0;
+  }
+  .wrapper section.about_map .content .block {
+    margin-left: 200px;
+    margin-right: 0;
+    margin-top: 100px;
+  }
+  .wrapper section.about_map .content .block + .block {
+    margin-left: 200px;
+    margin-top: 400px;
+  }
+  .wrapper section.about_map .map {
+    bottom: 300px;
+  }
+  .wrapper section.prizes .content .item {
+    width: 100%;
   }
 }
 @media (max-width: 1024px) {
@@ -488,6 +557,51 @@
   }
   .wrapper section.history .content .events .item .block:before {
     width: calc(100% - 20px);
+  }
+  .wrapper section.about .content .block {
+    max-width: none;
+    top: -250px;
+  }
+  .wrapper section.about .content .block p {
+    font-size: 25px;
+  }
+  .wrapper section.about .content .num {
+    max-width: 80%;
+    align-items: flex-end;
+    margin-left: 100px;
+  }
+  .wrapper section.about .content .num img {
+    max-width: 85%;
+  }
+  .wrapper section.about .content .num span {
+    font-size: 9vw;
+  }
+  .wrapper section.about_map .content .block + .block {
+    margin-top: calc(200px + 30vw);
+  }
+  .wrapper section.about_map .content .block p.one {
+    font-size: 34px;
+    line-height: 50px;
+  }
+  .wrapper section.about_map .content .row .big {
+    font-size: calc(42vw - 100px);
+  }
+  .wrapper section.about_map .content .row .col {
+    margin-left: 0;
+  }
+  .wrapper section.about_map .map {
+    bottom: auto;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-top: 200px;
+    width: 921px;
+    height: 590px;
+    left: 20%;
+  }
+  .wrapper section.about_map .map .points {
+    bottom: 134px;
+    left: 6px;
+    height: 270px;
   }
   .wrapper footer {
     background-color: #282828;
@@ -1004,6 +1118,61 @@
   .wrapper section.history .content .events .item .block .text p {
     font-size: 14px;
   }
+  .wrapper section.img_left .content p.title {
+    font-size: 24px;
+    margin-bottom: calc(140px + 54vw);
+    line-height: 40px;
+  }
+  .wrapper section.img_left .content .midlle_figure {
+    top: calc(110px + 10vw);
+  }
+  .wrapper section.img_left .img {
+    top: calc(110px + 20vw);
+  }
+  .wrapper section.about .content .block {
+    min-height: 280px;
+  }
+  .wrapper section.about .content .block p {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  .wrapper section.about_map .content .block {
+    margin-left: 0;
+  }
+  .wrapper section.about_map .content .block + .block {
+    margin-left: 0;
+  }
+  .wrapper section.about_map .map {
+    bottom: 400px;
+  }
+  .wrapper section.prizes {
+    margin-bottom: 60px;
+  }
+  .wrapper section.prizes .content .item {
+    flex-direction: column;
+  }
+  .wrapper section.prizes .content .item .img {
+    flex-basis: auto;
+    min-height: 309px;
+  }
+  .wrapper section.prizes .content .item .img img {
+    height: 100%;
+    width: auto;
+  }
+  .wrapper section.prizes .content .item .text {
+    flex-basis: auto;
+    padding: 20px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+  }
+  .wrapper section.prizes .content .item .text p.one {
+    font-size: 20px;
+  }
+  .wrapper section.prizes .content .item .text p.two {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+  }
 }
 @media (max-width: 550px) {
   .wrapper .content {
@@ -1167,6 +1336,70 @@
   .wrapper section.overseas_projects .content .left .logotype {
     right: 0px;
   }
+  .wrapper section.about .content .block {
+    padding: 30px;
+    height: 170px;
+    top: -100px;
+    min-height: auto;
+  }
+  .wrapper section.about .content .block p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .wrapper section.about .content .num {
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
+  .wrapper section.img_left .content p.title {
+    line-height: 30px;
+  }
+  .wrapper section.img_left .content p.one {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .wrapper section.img_left .content .midlle_figure {
+    left: 65%;
+    top: 170px;
+  }
+  .wrapper section.img_left .img {
+    min-height: 200px;
+    min-width: 305px;
+    right: auto;
+    left: 0;
+    top: calc(170px + 10vw);
+  }
+  .wrapper section.about_map {
+    margin-top: 60px;
+  }
+  .wrapper section.about_map .content .row .big {
+    font-size: 90px;
+  }
+  .wrapper section.about_map .content .row .col p.red_small {
+    right: auto;
+    left: 220px;
+    top: 0;
+  }
+  .wrapper section.about_map .content .row .col p.one {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+  .wrapper section.about_map .content .row .col p.two {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .wrapper section.about_map .content .block p.one {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .wrapper section.about_map .content .block p.two {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  .wrapper section.about_map .map {
+    margin-top: 150px;
+  }
   .wrapper footer .content .block .col {
     width: 100%;
   }
@@ -1179,5 +1412,19 @@
   .wrapper footer .content .block .col a.phone {
     position: relative;
     top: 130px;
+  }
+}
+@media (max-width: 320px) {
+  .wrapper section.about .content .num {
+    margin-top: 50px;
+  }
+  .wrapper section.about .content .block {
+    top: -150px;
+  }
+  .wrapper section.img_left .content p.title {
+    margin-bottom: 260px;
+  }
+  .wrapper section.about_map .map {
+    left: -10px;
   }
 }
