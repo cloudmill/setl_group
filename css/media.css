@@ -47,6 +47,25 @@
   .wrapper header .content .menu_list {
     margin-right: auto;
   }
+  .wrapper header .content .popup_menu .menu:before {
+    width: calc(50% + 110px);
+  }
+  .wrapper header .content .popup_menu .menu .row ul {
+    width: calc(50% - 100px);
+  }
+  .wrapper header .content .popup_menu .menu .row ul li a {
+    font-size: 45px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right {
+    width: 50%;
+  }
+  .wrapper header .content .popup_menu .menu .row .right a.phone {
+    font-size: 45px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right p {
+    font-size: 32px;
+    line-height: 50px;
+  }
   .wrapper section.main_banner .slider .item img {
     width: auto;
     height: 100%;
@@ -248,6 +267,25 @@
   }
   .wrapper header .content .lang {
     display: none;
+  }
+  .wrapper header .content .popup_menu .menu:before {
+    width: calc(50% + 70px);
+  }
+  .wrapper header .content .popup_menu .menu .row ul {
+    width: calc(50% - 70px);
+  }
+  .wrapper header .content .popup_menu .menu .row ul li a {
+    font-size: 37px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right {
+    width: 50%;
+  }
+  .wrapper header .content .popup_menu .menu .row .right a.phone {
+    font-size: 37px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right p {
+    font-size: 26px;
+    line-height: 40px;
   }
   .wrapper section.main_banner a.projects {
     height: 170px;
@@ -627,6 +665,42 @@
   }
 }
 @media (max-width: 768px) {
+  .wrapper header .content .popup_menu .menu {
+    padding-top: 130px;
+  }
+  .wrapper header .content .popup_menu .menu .content {
+    height: calc(100% - 190px);
+  }
+  .wrapper header .content .popup_menu .menu:before {
+    width: 100%;
+  }
+  .wrapper header .content .popup_menu .menu .row {
+    flex-wrap: wrap;
+  }
+  .wrapper header .content .popup_menu .menu .row ul {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .wrapper header .content .popup_menu .menu .row ul li a {
+    font-size: 26px;
+    line-height: 50px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right {
+    width: 100%;
+  }
+  .wrapper header .content .popup_menu .menu .row .right a.phone {
+    font-size: 26px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right span.phone_after {
+    margin-bottom: 10px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right .geo {
+    margin-bottom: 10px;
+  }
+  .wrapper header .content .popup_menu .menu .row .right p {
+    font-size: 18px;
+    line-height: 30px;
+  }
   .wrapper header .content .menu_list {
     display: none;
   }

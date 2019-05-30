@@ -15,6 +15,11 @@ custom = function(){
       $('.history .years').slick('slickGoTo',index)
       $('.history .events').slick('slickGoTo',index)
     })
+    $(document).on('click','.menu_open',(e)=>{
+      e.preventDefault();
+      $('header').toggleClass('opened_menu')
+      $('body').toggleClass('noscroll')
+    })
 }
 sliders_init = function(){
     $('.main_banner .slider').slick({

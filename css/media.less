@@ -65,6 +65,30 @@
       .content .menu_list{
         margin-right: auto;
       }
+      
+      .content .popup_menu .menu{
+        &:before{
+          width: ~'calc(50% + 110px)'
+        }
+        .row {
+          ul {
+            width: ~'calc(50% - 100px)';
+            li a{
+              font-size: 45px;
+            }
+          }
+          .right{
+            width: 50%;
+            a.phone{
+              font-size: 45px;
+            }
+            p{
+              font-size: 32px;
+              line-height: 50px;
+            }
+          }
+        }
+      }
     }
     section{
       &.main_banner .slider .item{
@@ -312,6 +336,30 @@
       .content{
         .lang{
           display: none;
+        }
+        
+        .popup_menu .menu{
+          &:before{
+            width: ~'calc(50% + 70px)'
+          }
+          .row {
+            ul {
+              width: ~'calc(50% - 70px)';
+              li a{
+                font-size: 37px;
+              }
+            }
+            .right{
+              width: 50%;
+              a.phone{
+                font-size: 37px;
+              }
+              p{
+                font-size: 26px;
+                line-height: 40px;
+              }
+            }
+          }
         }
       }
     }
@@ -792,6 +840,42 @@
   .wrapper{
     header{
       .content{
+        .popup_menu .menu{
+          padding-top: 130px;
+          .content{
+            height: ~'calc(100% - 190px)';
+          }
+          &:before{
+            width: 100%;
+          }
+          .row {
+            flex-wrap: wrap;
+            ul {
+              width: 100%;
+              li a{
+                font-size: 26px;
+                line-height: 50px;
+              }
+              margin-bottom: 60px;
+            }
+            .right{
+              width: 100%;
+              a.phone{
+                font-size: 26px;
+              }
+              span.phone_after{
+                margin-bottom: 10px;
+              }
+              .geo{
+                margin-bottom: 10px;
+              }
+              p{
+                font-size: 18px;
+                line-height: 30px;
+              }
+            }
+          }
+        }
         .menu_list{
           display: none;
           li{
