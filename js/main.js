@@ -1,12 +1,12 @@
-$(document).ready(function(){
+$(document).ready(()=>{
     custom();
     sliders_init();
     sliders();
     drag_add_drop_init();
-    
+    word_animate_init();
     
 })
-custom = function(){
+custom = ()=>{
     $(document).on('click','.drop_down_lists .item .plus',function(){
         $(this).parent().toggleClass('open')
     })
@@ -20,15 +20,23 @@ custom = function(){
       $('header').toggleClass('opened_menu')
       $('body').toggleClass('noscroll')
     })
+    $(document).on('click','.up',(e)=>{
+      e.preventDefault();
+      $('html,body').animate({scrollTop:0}, 500);
+    })
+    $(document).on('click','.str_down',(e)=>{
+      e.preventDefault();
+      $('html,body').animate({scrollTop:$('#news_main').offset().top}, 500);
+    })
 }
-sliders_init = function(){
+sliders_init = () =>{
     $('.main_banner .slider').slick({
         slidesToShow: 1, 
         slidesToScroll: 1,
-        speed: 1000,
+        speed: 1500,
         arrows: true,
         dots : false,
-        fade: true,
+        cssEase: 'cubic-bezier(0.770, 0.005, 0.240, 1.000)',
         infinite: false,
     })
     /* var show_slides = 4;
@@ -92,7 +100,7 @@ sliders_init = function(){
     })
     
 }
-sliders = function(){
+sliders = ()=>{
     slider_button_text($(".history .events"),0)
     slider_progress_bar(0)
     $('.main_banner .slide-count .current').text("0"+(1))
@@ -100,6 +108,18 @@ sliders = function(){
     $('.main_banner .slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
         $('.main_banner .slide-count .current').text("0"+(currentSlide + 1))
         $('.main_banner .slide-count .count').text("0"+slick.slideCount)
+        $('.main_banner .slider .item').eq(currentSlide).addClass('current')
+    });
+    $('.main_banner .slider .item').eq(0).addClass('current')
+    $('.main_banner .slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('.main_banner .slider .item').removeClass('current')
+      $('.main_banner .slide-count .current').text("0"+(nextSlide + 1))
+      setTimeout(() => {
+        word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h1'))
+        word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h4'))
+      }, 900);
+      word_animate.hide($('.main_banner .slider .item').eq(currentSlide).find('h1'))
+      word_animate.hide($('.main_banner .slider .item').eq(currentSlide).find('h4'))
     });
 
     $('.indicators .progress_slide').width($(".indicators .slider").width())
@@ -121,7 +141,7 @@ sliders = function(){
       slider_progress_bar(nextSlide)
     });
 }
-slider_button_text = function(slider,index){
+slider_button_text = (slider,index)=>{
   var text_prev = '',
   text_next = '';
   if(index == 0){
@@ -139,12 +159,12 @@ slider_button_text = function(slider,index){
   slider.find('.slick-next').text(text_next)
 
 }
-slider_progress_bar = function(index){
+slider_progress_bar = index =>{
   slider = $(".history .events")
   progress_bar = $('.history .years_progress .current')
   progress_bar.width(progress_bar.parent().width()/slider.slick('getSlick').slideCount*(index+1))
 }
-drag_add_drop_init = function(){
+drag_add_drop_init = () => {
   if($(window).width()<=768){
     setTimeout(() => {
       drag_add_drop_vertical($('.scroll_box .sub_menu'))
@@ -154,7 +174,7 @@ drag_add_drop_init = function(){
     drag_add_drop_vertical($('.scroll_box .sub_menu'))
   }) */
 }
-drag_add_drop_vertical = function(el){
+drag_add_drop_vertical = el => {
   var press = false,
   move = false,
   begin_pos_x = 0,
@@ -225,5 +245,49 @@ drag_add_drop_vertical = function(el){
     if(move){
       e.preventDefault();
     }
+  })
+}
+word_animate = {
+  start : (item) => {
+    for(let n=0;n<item.length;n++){
+      var 
+        it = item.eq(n).addClass('word_animate'),
+        new_html = '',
+        text = it.text().split(''),
+        mem = NaN;
+      
+      text.forEach((it2,i,)=>{
+        if(mem != ' ' || it2 != ' ')
+          new_html+='<span class="" data-index="'+i+'"data-pause="'+(i/(text.length-1))+'">'+it2+'</span>';
+        mem = it2
+      })
+      item.eq(n).html(new_html)
+      item.eq(n).attr('data-index',n)
+    }
+  },
+  show : (item) =>{
+    for(let j=0;j<item.find('span').length;j++){
+      setTimeout(() => {
+        item.find('span').eq(j).addClass('fadeInDown')
+      }, parseFloat(item.find('span').eq(j).data('pause')*1000));
+     
+    }
+  },
+  hide : (item) =>{
+    for(let j=0;j<item.find('span').length;j++){
+      setTimeout(() => {
+        item.find('span').eq(j).removeClass('fadeInDown')
+      }, (1 - parseFloat(item.find('span').eq(j).data('pause')))*1000);
+    }
+  }
+}
+word_animate_init = () =>{
+  objects = [
+    $('.main_banner .slider h1'),
+    $('.main_banner .slider h4')
+  ]
+  objects.forEach((item,i)=>{
+    word_animate.start(item)
+    word_animate.show(item.parent().eq(0).find('h1,h2,h3,h4,h5,h6,p'))
   })
 }

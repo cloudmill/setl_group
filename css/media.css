@@ -69,8 +69,6 @@
   .wrapper section.main_banner .slider .item img {
     width: auto;
     height: 100%;
-    left: 50%;
-    transform: translate(-50%, 0);
   }
   .wrapper section.main_banner .slider .item .content .text h1 {
     font-size: 80px;
