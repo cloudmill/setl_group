@@ -346,6 +346,9 @@ body.noscroll {
 .wrapper header .content .popup_menu .menu .row ul {
   width: calc(50% - 210px);
 }
+.wrapper header .content .popup_menu .menu .row ul li {
+  list-style: none;
+}
 .wrapper header .content .popup_menu .menu .row ul li a {
   color: #ffffff;
   text-decoration: none;

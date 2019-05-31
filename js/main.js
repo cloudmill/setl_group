@@ -1,4 +1,4 @@
-$(document).ready(()=>{
+$(document).ready(function(){
     custom();
     sliders_init();
     sliders();
@@ -6,7 +6,7 @@ $(document).ready(()=>{
     word_animate_init();
     
 })
-custom = ()=>{
+custom = function(){
     $(document).on('click','.drop_down_lists .item .plus',function(){
         $(this).parent().toggleClass('open')
     })
@@ -15,9 +15,9 @@ custom = ()=>{
       $('.history .years').slick('slickGoTo',index)
       $('.history .events').slick('slickGoTo',index)
     })
-    $(document).on('click','.menu_open',(e)=>{
+    $(document).on('click','.menu_open',function (e){
       e.preventDefault();
-      menu = () =>{
+      menu = function (){
         $('header').toggleClass('opened_menu')
         $('body').toggleClass('noscroll')
       }
@@ -28,30 +28,30 @@ custom = ()=>{
         $('.popup_menu .menu .row .right a'),
       ]
       if($('header').hasClass('opened_menu')){
-        objects.forEach((item,i)=>{
+        objects.forEach(function (item,i){
           word_animate.hide(item,300)
         })
-        setTimeout( () =>{
+        setTimeout( function (){
           menu()
         },300)  
       }else{
         menu()
-        objects.forEach((item,i)=>{
+        objects.forEach(function (item,i){
           word_animate.show(item,300)
         })
       }
       
     })
-    $(document).on('click','.up',(e)=>{
+    $(document).on('click','.up',function (e){
       e.preventDefault();
       $('html,body').animate({scrollTop:0}, 500);
     })
-    $(document).on('click','.str_down',(e)=>{
+    $(document).on('click','.str_down',function (e){
       e.preventDefault();
       $('html,body').animate({scrollTop:$('#news_main').offset().top}, 500);
     })
 }
-sliders_init = () =>{
+sliders_init = function (){
     $('.main_banner .slider').slick({
         slidesToShow: 1, 
         slidesToScroll: 1,
@@ -122,7 +122,7 @@ sliders_init = () =>{
     })
     
 }
-sliders = ()=>{
+sliders = function(){
     slider_button_text($(".history .events"),0)
     slider_progress_bar(0)
     $('.main_banner .slide-count .current').text("0"+(1))
@@ -136,7 +136,7 @@ sliders = ()=>{
     $('.main_banner .slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
       $('.main_banner .slider .item').removeClass('current')
       $('.main_banner .slide-count .current').text("0"+(nextSlide + 1))
-      setTimeout(() => {
+      setTimeout(function () {
         word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h1'),1000)
         word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h4'),1000)
       }, 1000);
@@ -163,7 +163,7 @@ sliders = ()=>{
       slider_progress_bar(nextSlide)
     });
 }
-slider_button_text = (slider,index)=>{
+slider_button_text = function (slider,index){
   var text_prev = '',
   text_next = '';
   if(index == 0){
@@ -181,22 +181,22 @@ slider_button_text = (slider,index)=>{
   slider.find('.slick-next').text(text_next)
 
 }
-slider_progress_bar = index =>{
+slider_progress_bar = function (index){
   slider = $(".history .events")
   progress_bar = $('.history .years_progress .current')
   progress_bar.width(progress_bar.parent().width()/slider.slick('getSlick').slideCount*(index+1))
 }
-drag_add_drop_init = () => {
+drag_add_drop_init = function () {
   if($(window).width()<=768){
-    setTimeout(() => {
+    setTimeout(function () {
       drag_add_drop_vertical($('.scroll_box .sub_menu'))
     }, 10);
   }
-  /* $(document).on('load','.scroll_box .sub_menu',()=>{
+  /* $(document).on('load','.scroll_box .sub_menu',function(){
     drag_add_drop_vertical($('.scroll_box .sub_menu'))
   }) */
 }
-drag_add_drop_vertical = el => {
+drag_add_drop_vertical = function (el) {
   var press = false,
   move = false,
   begin_pos_x = 0,
@@ -269,16 +269,28 @@ drag_add_drop_vertical = el => {
     }
   })
 }
+word_animate_do = function(item,show,time){
+  if(show){
+    setTimeout(function () {
+      item.addClass('fadeInDown')
+    }, parseFloat(item.data('pause')*time));
+  }else{
+    setTimeout(function () {
+      item.removeClass('fadeInDown')
+    }, (1 - parseFloat(item.data('pause')))*time);
+    console.log(time)
+  }
+  
+}
 word_animate = {
-  start : (item) => {
-    for(let n=0;n<item.length;n++){
+  start : function (item) {
+    for(var n=0;n<item.length;n++){
       var 
         it = item.eq(n).addClass('word_animate'),
         new_html = '',
         text = it.text().split(''),
         mem = NaN;
-      
-      text.forEach((it2,i,)=>{
+      text.forEach(function (it2,i){
         if(mem != ' ' || it2 != ' ')
           new_html+='<span class="" data-index="'+i+'"data-pause="'+(i/(text.length-1))+'">'+it2+'</span>';
         mem = it2
@@ -287,23 +299,18 @@ word_animate = {
       item.eq(n).attr('data-index',n)
     }
   },
-  show : (item,time) =>{
-    for(let j=0;j<item.find('span').length;j++){
-      setTimeout(() => {
-        item.find('span').eq(j).addClass('fadeInDown')
-      }, parseFloat(item.find('span').eq(j).data('pause')*time));
-     
+  show : function (item,time){
+    for(j=0;j<item.find('span').length;j++){
+      word_animate_do(item.find('span').eq(j),true,time)
     }
   },
-  hide : (item,time) =>{
-    for(let j=0;j<item.find('span').length;j++){
-      setTimeout(() => {
-        item.find('span').eq(j).removeClass('fadeInDown')
-      }, (1 - parseFloat(item.find('span').eq(j).data('pause')))*time);
+  hide : function (item,time){
+    for(var k=0;k<item.find('span').length;k++){
+      word_animate_do(item.find('span').eq(k),false,time)
     }
   }
 }
-word_animate_init = () =>{
+word_animate_init = function (){
   objects = [
     $('.main_banner .slider h1'),
     $('.main_banner .slider h4'),
@@ -312,8 +319,8 @@ word_animate_init = () =>{
     $('.popup_menu .menu .row .right p'),
     $('.popup_menu .menu .row .right a'),
   ]
-  objects.forEach((item,i)=>{
+  objects.forEach(function (item,i){
     word_animate.start(item)
-    word_animate.show(item.parent().eq(0).find('h1,h2,h3,h4,h5,h6,p,a,span'))
+    word_animate.show(item.parent().eq(0).find('h1,h2,h3,h4,h5,h6,p,a,span'),1000)
   })
 }
