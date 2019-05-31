@@ -18,6 +18,12 @@
 }
 @font-face {
   font-family: "Spectral";
+  src: url("../fonts/Spectral-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Spectral";
   src: url("../fonts/Spectral-MediumItalic.ttf");
   font-weight: normal;
   font-style: italic;
@@ -173,9 +179,22 @@ body.noscroll {
   width: 17px;
   height: 17px;
   min-width: 17px;
-  position: relative;
   cursor: pointer;
   margin-right: 120px;
+  position: relative;
+}
+.wrapper header .content .search.active::before {
+  opacity: 1;
+}
+.wrapper header .content .search.active:after {
+  opacity: 0;
+}
+.wrapper header .content .search.active .search_area {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.253);
+}
+.wrapper header .content .search.active .search_area button {
+  display: block;
 }
 .wrapper header .content .search:hover::before {
   opacity: 1;
@@ -212,6 +231,39 @@ body.noscroll {
   background-position: top left;
   background-size: 100% 100%;
 }
+.wrapper header .content .search .search_area {
+  display: none;
+  z-index: 3;
+  position: absolute;
+  margin-right: 10px;
+  right: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrapper header .content .search .search_area button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  display: none;
+  position: absolute;
+  left: 100%;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+.wrapper header .content .search .search_area input {
+  border: 0;
+  background-color: transparent;
+  color: #232323;
+  font-family: "Apercu Pro";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30.01px;
+  padding: 10px 30px;
+}
 .wrapper header .content .lang {
   display: flex;
   margin-right: 120px;
@@ -245,6 +297,7 @@ body.noscroll {
   font-family: "Apercu Pro";
   font-size: 15px;
   font-weight: 400;
+  height: 35px;
   display: flex;
   position: relative;
   align-items: center;
@@ -477,7 +530,7 @@ body.noscroll {
   height: 100%;
   transform-origin: center center;
   transform: scale(0.8);
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.3s;
 }
 .wrapper section.main_banner .slider .item.current {
   transform: scale(1);
@@ -485,11 +538,14 @@ body.noscroll {
 .wrapper section.main_banner .slider .item.current .content .text {
   transform: scale(1);
 }
+.wrapper section.main_banner .slider .item.current img {
+  transform: translate(-50%, -50%) scale(1);
+}
 .wrapper section.main_banner .slider .item .content .text {
-  width: 695px;
+  width: 700px;
   margin-left: 200px;
   padding-top: 210px;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.3s;
   transform-origin: center center;
   transform: scale(1.2);
 }
@@ -512,10 +568,10 @@ body.noscroll {
 }
 .wrapper section.main_banner .slider .item img {
   position: absolute;
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.3s;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.2);
   min-width: 100vw;
   min-height: 100%;
   height: auto;
@@ -614,6 +670,7 @@ body.noscroll {
 }
 .wrapper section.news_main .content .block .left {
   position: relative;
+  min-height: 470px;
 }
 .wrapper section.news_main .content .block .left .small_figure {
   z-index: -2;
@@ -707,6 +764,9 @@ body.noscroll {
 .wrapper section.news_main .content .block .right a.item:hover {
   border-bottom: 1px solid #ea0013;
 }
+.wrapper section.news_main .content .block .right a.item:hover p {
+  color: #ea0013;
+}
 .wrapper section.news_main .content .block .right a.item:first-child + a {
   border-bottom: 1px solid transparent;
   position: relative;
@@ -728,6 +788,7 @@ body.noscroll {
 .wrapper section.news_main .content .block .right a.item p {
   color: #232323;
   font-family: "Apercu Pro";
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   max-width: 440px;
 }
 .wrapper section.news_main .content .block .right a.item p.one {
@@ -737,6 +798,7 @@ body.noscroll {
 .wrapper section.news_main .content .block .right a.item p.two {
   font-size: 15px;
   font-weight: 500;
+  font-family: "Spectral";
   line-height: 22px;
 }
 .wrapper section.news_main .content .block .right a.item p.date {
@@ -801,8 +863,12 @@ body.noscroll {
 .wrapper section.news_main .content .list a.item:hover {
   border-bottom: 1px solid #ea0013;
 }
+.wrapper section.news_main .content .list a.item:hover p {
+  color: #ea0013;
+}
 .wrapper section.news_main .content .list a.item p {
   color: #232323;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   font-family: "Apercu Pro";
 }
 .wrapper section.news_main .content .list a.item p.one {
@@ -826,7 +892,7 @@ body.noscroll {
   width: calc(50% - 50px);
   margin-left: 50%;
   padding-left: 50px;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 .wrapper section.news_main .content .form_news form {
   position: relative;
@@ -944,6 +1010,7 @@ body.noscroll {
 }
 .wrapper section.block_img .content a.proj {
   width: 188px;
+  margin-top: -50px;
   height: 54px;
   display: flex;
   align-items: center;
@@ -996,6 +1063,10 @@ body.noscroll {
   padding-right: 0;
   overflow: hidden;
 }
+.wrapper section.block_img .content .block .left:hover img,
+.wrapper section.block_img .content .block .right:hover img {
+  transform: scale(1.2);
+}
 .wrapper section.block_img .content .block .left .str,
 .wrapper section.block_img .content .block .right .str {
   position: absolute;
@@ -1012,6 +1083,7 @@ body.noscroll {
   width: 105%;
   height: auto;
   min-height: 100%;
+  transition: all 7s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .wrapper section.block_img .content .block .left p,
 .wrapper section.block_img .content .block .right p {
@@ -1079,6 +1151,7 @@ body.noscroll {
   margin-bottom: 70px;
   position: relative;
   margin-top: 0;
+  margin-left: 200px;
 }
 .wrapper section.companies .content p.title:before {
   content: "";
@@ -1092,6 +1165,7 @@ body.noscroll {
   margin-right: 57px;
 }
 .wrapper section.companies .content .block {
+  margin-left: 200px;
   border: 1px solid #e0e0e0;
   display: flex;
   justify-content: space-between;
@@ -1149,7 +1223,7 @@ body.noscroll {
   max-height: 95%;
 }
 .wrapper section.page_title {
-  margin-top: 200px;
+  margin-top: 180px;
 }
 .wrapper section.page_title.has_bg {
   position: relative;
@@ -1213,18 +1287,21 @@ body.noscroll {
   margin-bottom: 80px;
 }
 .wrapper section.page_title .scroll_box ul.sub_menu.mini {
-  margin-top: -45px;
+  margin-top: -30px;
   justify-content: flex-start;
 }
 .wrapper section.page_title .scroll_box ul.sub_menu.mini.space_b {
   justify-content: space-between;
 }
 .wrapper section.page_title .scroll_box ul.sub_menu.mini li {
-  max-width: 210px;
+  min-width: 120px;
 }
 .wrapper section.page_title .scroll_box ul.sub_menu.mini li a {
   margin-right: 25px;
   color: black;
+}
+.wrapper section.page_title .scroll_box ul.sub_menu.max_width li {
+  max-width: 210px;
 }
 .wrapper section.page_title .scroll_box ul.sub_menu li {
   position: relative;
@@ -1292,6 +1369,7 @@ body.noscroll {
   border: 1px solid #ea0013;
 }
 .wrapper section.fin_report .content .block .item:hover .str::before {
+  width: 100%;
   opacity: 1;
 }
 .wrapper section.fin_report .content .block .item:before {
@@ -1333,26 +1411,40 @@ body.noscroll {
   font-family: "Apercu Pro";
   font-size: 13px;
   font-weight: 400;
+  letter-spacing: normal;
+  text-transform: lowercase;
 }
 .wrapper section.fin_report .content .block .item .str {
   bottom: 27px;
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   right: 30px;
+  display: flex;
+  justify-content: flex-end;
 }
 .wrapper section.fin_report .content .block .item .str::before {
-  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   content: '';
+  opacity: 0;
   display: block;
-  width: 100%;
+  width: 50%;
+  background-position: center center;
   background-color: #fff;
+  transform: translate(0, -1px);
   height: 100%;
   background-repeat: no-repeat;
-  opacity: 0;
-  background-size: contain;
+  background-size: 100% auto;
   background-image: url(../images/str_red.png);
 }
 .wrapper section.block_text {
   margin-bottom: 100px;
+}
+@media (min-width: 1024px) {
+  .wrapper section.block_text.setl_city {
+    margin-top: 150px;
+  }
+}
+.wrapper section.block_text.setl_city .content p.title::before {
+  left: calc(100% + 100px);
 }
 .wrapper section.block_text .content p.title {
   color: #232323;
@@ -1360,11 +1452,22 @@ body.noscroll {
   font-size: 35px;
   font-weight: 400;
   line-height: 46.01px;
-  max-width: 525px;
+  max-width: 735px;
   margin-bottom: 20px;
+  position: relative;
 }
 .wrapper section.block_text .content p.title.two {
-  max-width: 900px;
+  max-width: 1040px;
+}
+.wrapper section.block_text .content p.title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 1px;
+  background-color: #dedede;
+  width: 1000px;
+  left: 100%;
+  bottom: 0;
 }
 .wrapper section.block_text .content p.three {
   color: #232323;
@@ -1563,6 +1666,7 @@ body.noscroll {
   font-size: 35px;
   font-weight: 500;
   line-height: 100.02px;
+  margin-bottom: 0;
 }
 .wrapper section.indicators .content .block {
   display: flex;
@@ -1577,6 +1681,7 @@ body.noscroll {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border-bottom: 2px solid #fff;
 }
 .wrapper section.indicators .content .block table.titles tr:first-child {
   background-color: transparent;
@@ -2964,7 +3069,6 @@ body.noscroll {
   font-family: "Apercu Pro";
   font-size: 12px;
   font-weight: 400;
-  line-height: 35px;
   margin-top: 142px;
   display: flex;
   align-items: center;
@@ -3038,6 +3142,7 @@ body.noscroll {
 .str {
   position: absolute;
   display: block;
+  background: none;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100px;

@@ -50,6 +50,18 @@ custom = function(){
       e.preventDefault();
       $('html,body').animate({scrollTop:$('#news_main').offset().top}, 500);
     })
+    $(document).on('click','.search',function (e){
+      if($('.search').hasClass('active')){
+        if($('.search .search_area input').val()=="" && !$('.search .search_area input').is(e.target)){
+          e.preventDefault();
+          setTimeout(function(){
+            $('.search').removeClass('active');
+          },300)
+        }
+      }else{
+        $('.search').addClass('active');
+      }
+    })
 }
 sliders_init = function (){
     $('.main_banner .slider').slick({
@@ -277,10 +289,8 @@ word_animate_do = function(item,show,time){
   }else{
     setTimeout(function () {
       item.removeClass('fadeInDown')
-    }, (1 - parseFloat(item.data('pause')))*time);
-    console.log(time)
+    }, (parseFloat(item.data('pause')))*time);
   }
-  
 }
 word_animate = {
   start : function (item) {
@@ -317,7 +327,6 @@ word_animate_init = function (){
     $('.popup_menu .menu .row ul li a'),
     $('.popup_menu .menu .row .right span'),
     $('.popup_menu .menu .row .right p'),
-    $('.popup_menu .menu .row .right a'),
   ]
   objects.forEach(function (item,i){
     word_animate.start(item)

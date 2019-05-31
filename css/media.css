@@ -640,6 +640,12 @@
     left: 6px;
     height: 270px;
   }
+  .wrapper section.companies .content p.title {
+    margin-left: 0;
+  }
+  .wrapper section.companies .content .block {
+    margin-left: 0;
+  }
   .wrapper footer {
     background-color: #282828;
     overflow: visible;
@@ -802,6 +808,7 @@
     font-size: 16px;
   }
   .wrapper section.news_main .content .form_news {
+    margin-top: 50px;
     margin-left: 0;
     width: auto;
     padding: 0;
