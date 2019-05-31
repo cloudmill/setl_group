@@ -17,8 +17,30 @@ custom = ()=>{
     })
     $(document).on('click','.menu_open',(e)=>{
       e.preventDefault();
-      $('header').toggleClass('opened_menu')
-      $('body').toggleClass('noscroll')
+      menu = () =>{
+        $('header').toggleClass('opened_menu')
+        $('body').toggleClass('noscroll')
+      }
+      objects = [
+        $('.popup_menu .menu .row ul li a'),
+        $('.popup_menu .menu .row .right span'),
+        $('.popup_menu .menu .row .right p'),
+        $('.popup_menu .menu .row .right a'),
+      ]
+      if($('header').hasClass('opened_menu')){
+        objects.forEach((item,i)=>{
+          word_animate.hide(item,300)
+        })
+        setTimeout( () =>{
+          menu()
+        },300)  
+      }else{
+        menu()
+        objects.forEach((item,i)=>{
+          word_animate.show(item,300)
+        })
+      }
+      
     })
     $(document).on('click','.up',(e)=>{
       e.preventDefault();
@@ -115,11 +137,11 @@ sliders = ()=>{
       $('.main_banner .slider .item').removeClass('current')
       $('.main_banner .slide-count .current').text("0"+(nextSlide + 1))
       setTimeout(() => {
-        word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h1'))
-        word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h4'))
-      }, 900);
-      word_animate.hide($('.main_banner .slider .item').eq(currentSlide).find('h1'))
-      word_animate.hide($('.main_banner .slider .item').eq(currentSlide).find('h4'))
+        word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h1'),1000)
+        word_animate.show($('.main_banner .slider .item').eq(nextSlide).find('h4'),1000)
+      }, 1000);
+      word_animate.hide($('.main_banner .slider .item').eq(currentSlide).find('h1'),1000)
+      word_animate.hide($('.main_banner .slider .item').eq(currentSlide).find('h4'),1000)
     });
 
     $('.indicators .progress_slide').width($(".indicators .slider").width())
@@ -265,29 +287,33 @@ word_animate = {
       item.eq(n).attr('data-index',n)
     }
   },
-  show : (item) =>{
+  show : (item,time) =>{
     for(let j=0;j<item.find('span').length;j++){
       setTimeout(() => {
         item.find('span').eq(j).addClass('fadeInDown')
-      }, parseFloat(item.find('span').eq(j).data('pause')*1000));
+      }, parseFloat(item.find('span').eq(j).data('pause')*time));
      
     }
   },
-  hide : (item) =>{
+  hide : (item,time) =>{
     for(let j=0;j<item.find('span').length;j++){
       setTimeout(() => {
         item.find('span').eq(j).removeClass('fadeInDown')
-      }, (1 - parseFloat(item.find('span').eq(j).data('pause')))*1000);
+      }, (1 - parseFloat(item.find('span').eq(j).data('pause')))*time);
     }
   }
 }
 word_animate_init = () =>{
   objects = [
     $('.main_banner .slider h1'),
-    $('.main_banner .slider h4')
+    $('.main_banner .slider h4'),
+    $('.popup_menu .menu .row ul li a'),
+    $('.popup_menu .menu .row .right span'),
+    $('.popup_menu .menu .row .right p'),
+    $('.popup_menu .menu .row .right a'),
   ]
   objects.forEach((item,i)=>{
     word_animate.start(item)
-    word_animate.show(item.parent().eq(0).find('h1,h2,h3,h4,h5,h6,p'))
+    word_animate.show(item.parent().eq(0).find('h1,h2,h3,h4,h5,h6,p,a,span'))
   })
 }
