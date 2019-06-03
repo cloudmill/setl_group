@@ -764,7 +764,7 @@ body.noscroll {
 .wrapper section.news_main .content .block .right a.item:hover {
   border-bottom: 1px solid #ea0013;
 }
-.wrapper section.news_main .content .block .right a.item:hover p {
+.wrapper section.news_main .content .block .right a.item:hover p.one {
   color: #ea0013;
 }
 .wrapper section.news_main .content .block .right a.item:first-child + a {
@@ -863,7 +863,7 @@ body.noscroll {
 .wrapper section.news_main .content .list a.item:hover {
   border-bottom: 1px solid #ea0013;
 }
-.wrapper section.news_main .content .list a.item:hover p {
+.wrapper section.news_main .content .list a.item:hover p.one {
   color: #ea0013;
 }
 .wrapper section.news_main .content .list a.item p {
@@ -932,6 +932,7 @@ body.noscroll {
 }
 .wrapper section.news_main .content .form_news form button {
   position: absolute;
+  cursor: pointer;
   bottom: 13px;
   border: 0;
   right: 0;
@@ -3164,6 +3165,9 @@ body.noscroll {
   background-image: url(../images/str_return.png);
   width: 27px;
   height: 25px;
+}
+.error {
+  border-bottom: 1px solid #ea0013 !important;
 }
 .word_animate span {
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);

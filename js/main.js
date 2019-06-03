@@ -62,6 +62,25 @@ custom = function(){
         $('.search').addClass('active');
       }
     })
+    $(document).on('submit','.form_news form',function(e){
+      e.preventDefault()
+      var mail = $(this).find('input'),
+      error = 0;
+      mail.removeClass('error')
+      if(mail.val() == "" || !mail_right(mail.val())){
+        error++
+        mail.addClass('error')
+      }
+      if(error==0){
+        
+      }else{
+        return false;
+      }
+    })
+}
+function mail_right(email) {
+  var pattern  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return pattern .test(String(email).toLowerCase());
 }
 sliders_init = function (){
     $('.main_banner .slider').slick({

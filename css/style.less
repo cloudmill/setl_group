@@ -810,7 +810,7 @@ body {
                 transition: @anim;
                 &:hover{
                   border-bottom: 1px solid #ea0013;
-                  p{
+                  p.one{
                     color: #ea0013;
                   }
                 }
@@ -917,7 +917,7 @@ body {
             transition: @anim;
             &:hover{
               border-bottom: 1px solid #ea0013;
-              p{
+              p.one{
                 color: #ea0013;
               }
             }
@@ -989,6 +989,7 @@ body {
             }
             button {
               position: absolute;
+              cursor: pointer;
               bottom: 13px;
               border: 0;
               right: 0;
@@ -3341,7 +3342,9 @@ body {
     height: 25px;
   }
 }
-
+.error{
+  border-bottom: 1px solid #ea0013 !important;
+}
 .word_animate{
   span{
     transition: @anim;
