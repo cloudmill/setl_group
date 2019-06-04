@@ -88,9 +88,9 @@ forms_submit = function(){
   $(document).on('change','.search_results form .filter input',function(){
     $('.search_results form').trigger('submit')
   })
-  $(document).on('submit','.search_results form',function(e){
+  $(document).on('submit','.search_results form, form.search_results',function(e){
     e.preventDefault()
-    var filter = $(this).find('input[name=filter]:checked'),
+    var filter = $(this).find('input[name=filter]:checked').val() || 'date',
     search_str = $(this).find('input[name=search]')
     error = 0;
     /* mail.removeClass('error')
