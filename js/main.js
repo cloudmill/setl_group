@@ -4,7 +4,7 @@ $(document).ready(function(){
     sliders();
     drag_add_drop_init();
     word_animate_init();
-    
+    forms_submit();
 })
 custom = function(){
     $(document).on('click','.drop_down_lists .item .plus',function(){
@@ -62,25 +62,48 @@ custom = function(){
         $('.search').addClass('active');
       }
     })
-    $(document).on('submit','.form_news form',function(e){
-      e.preventDefault()
-      var mail = $(this).find('input'),
-      error = 0;
-      mail.removeClass('error')
-      if(mail.val() == "" || !mail_right(mail.val())){
-        error++
-        mail.addClass('error')
-      }
-      if(error==0){
-        
-      }else{
-        return false;
-      }
-    })
+    
 }
 function mail_right(email) {
   var pattern  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return pattern .test(String(email).toLowerCase());
+}
+forms_submit = function(){
+  $(document).on('submit','.form_news form',function(e){
+    e.preventDefault()
+    var mail = $(this).find('input'),
+    error = 0;
+    mail.removeClass('error')
+    if(mail.val() == "" || !mail_right(mail.val())){
+      error++
+      mail.addClass('error')
+    }
+    if(error==0){
+      
+    }else{
+      return false;
+    }
+  })
+
+  $(document).on('change','.search_results form .filter input',function(){
+    $('.search_results form').trigger('submit')
+  })
+  $(document).on('submit','.search_results form',function(e){
+    e.preventDefault()
+    var filter = $(this).find('input[name=filter]:checked'),
+    search_str = $(this).find('input[name=search]')
+    error = 0;
+    /* mail.removeClass('error')
+    if(mail.val() == "" || !mail_right(mail.val())){
+      error++
+      mail.addClass('error')
+    } */
+    if(error==0){
+      console.log(search_str.val())
+    }else{
+      return false;
+    }
+  })
 }
 sliders_init = function (){
     $('.main_banner .slider').slick({
@@ -220,12 +243,10 @@ slider_progress_bar = function (index){
 drag_add_drop_init = function () {
   if($(window).width()<=768){
     setTimeout(function () {
-      drag_add_drop_vertical($('.scroll_box .sub_menu'))
-    }, 10);
-  }
-  /* $(document).on('load','.scroll_box .sub_menu',function(){
+      
+    }, 100);
     drag_add_drop_vertical($('.scroll_box .sub_menu'))
-  }) */
+  }
 }
 drag_add_drop_vertical = function (el) {
   var press = false,
@@ -248,9 +269,10 @@ drag_add_drop_vertical = function (el) {
     }
     new_width = parseInt(items.eq(i).css('width'))+parseInt(items.eq(i).css('margin-right'))
     width += parseFloat(items.eq(i).width()) + parseFloat(items.eq(i).css('margin-right'))
+    items.eq(i).parent().css('min-width','auto');
     items.eq(i).parent().width(new_width)
   }
-  el.width(width)
+ // el.width(width)
   if(el.find('li.active').length)
     begin_pos_x = el.find('li.active').eq(0).offset().left - el.offset().left
 

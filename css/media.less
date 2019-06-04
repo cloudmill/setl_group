@@ -317,11 +317,23 @@
           }
         }
       }
+      &.management .content .row:last-child .point.top.long.center{
+        top: -343px;
+        &:after{
+          width: 343px;
+        }
+      }
+      &.struct .content .block .item{
+        width: ~"calc((100% - 96px ) / 2)"
+      }
     }
   }
 }
 @media(max-width: 1024px){
   .wrapper{
+    &.p404{
+      background-image: none;
+    }
     .content{
       width: ~'calc(100% - 80px)';
       margin: auto;
@@ -420,6 +432,15 @@
         .list{
           a.item{
             flex-basis: ~"calc((100% - 50px)/2)";
+          }
+        }
+      }
+      &.search_results{
+        .content{
+          .results{
+            a.item{
+              flex-basis: ~"calc((100% - 50px)/2)";
+            }
           }
         }
       }
@@ -818,6 +839,41 @@
           }
         }
       }
+      &.management .content .row{
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        .item{
+          flex-basis: 100% !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          .point{
+            display: none;
+          }
+          ul{
+            flex-wrap: wrap;
+            li{
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      &.management .content .title{
+        margin-bottom: 50px;
+        height: 60px;
+      }
+      &.page_404{
+        margin-top: 150px;
+        img{
+          display: block;
+        }
+        .content{
+          p{
+            font-size: 40px;
+          }
+        }
+      }
     }
     footer{
       background-color: #282828;
@@ -1013,6 +1069,19 @@
           margin-left: 0;
           width: auto;
           padding: 0;
+        }
+      }
+      &.search_results{
+        .content{
+          form{
+            margin-top: 30px;
+          }
+          .results{
+            a.item{
+              flex-basis: 100%;
+              max-width: 440px;
+            }
+          }
         }
       }
       &.block_img .content{
@@ -1536,6 +1605,45 @@
           }
         }
       }
+      &.management .content .row{
+        .item{
+          padding: 30px;
+          padding-bottom: 10px;
+          p{
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 24px;
+          }
+          ul{
+            li{
+              font-size: 16px;
+              padding-left: 0;
+              margin-bottom: 11px;
+              &::before{
+                display: none;
+              }
+              span{
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+      &.struct .content .block .item{
+        width: 100%;
+      }
+      &.page_404{
+        .content{
+          min-height: 350px;
+          p{
+            font-size: 30px;
+            text-align: center;
+          }
+        }
+        img{
+          top:300px;
+        }
+      }
     }
     footer{
 
@@ -1665,6 +1773,42 @@
               }
               &.right{
                 margin-left: 20px;
+              }
+            }
+          }
+        }
+      }
+      &.search_results{
+        .content{
+          form{
+            .row{
+              flex-direction: column;
+              margin-bottom: 30px;
+              .filter{
+                label{
+                  margin-left: 0;
+                  margin-right: 40px;
+                }
+              }
+            }
+            .search_area{
+              input{
+                padding: 20px 30px;
+              }
+              button{
+                height: 60px;
+              }
+            }
+          }
+          .results{
+            a.item{
+              p{
+                &.one{
+                  font-size: 16px;
+                }
+                &.two{
+                  font-size: 14px;
+                }
               }
             }
           }
@@ -1863,6 +2007,12 @@
           margin-top: 150px;
         }
       }
+      &.page_404{
+        img{
+          top:350px;
+        }
+      }
+      
     }
     footer{
       .content{

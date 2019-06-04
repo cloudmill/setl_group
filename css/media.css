@@ -253,8 +253,20 @@
   .wrapper section.prizes .content .item {
     width: 100%;
   }
+  .wrapper section.management .content .row:last-child .point.top.long.center {
+    top: -343px;
+  }
+  .wrapper section.management .content .row:last-child .point.top.long.center:after {
+    width: 343px;
+  }
+  .wrapper section.struct .content .block .item {
+    width: calc((100% - 96px ) / 2);
+  }
 }
 @media (max-width: 1024px) {
+  .wrapper.p404 {
+    background-image: none;
+  }
   .wrapper .content {
     width: calc(100% - 80px);
     margin: auto;
@@ -329,6 +341,9 @@
     transform: translate(-50%, 0);
   }
   .wrapper section.news_main .content .list a.item {
+    flex-basis: calc((100% - 50px)/2);
+  }
+  .wrapper section.search_results .content .results a.item {
     flex-basis: calc((100% - 50px)/2);
   }
   .wrapper section.block_img .content p.sect-title {
@@ -646,6 +661,39 @@
   .wrapper section.companies .content .block {
     margin-left: 0;
   }
+  .wrapper section.management .content .row {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .wrapper section.management .content .row .item {
+    flex-basis: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .wrapper section.management .content .row .item .point {
+    display: none;
+  }
+  .wrapper section.management .content .row .item ul {
+    flex-wrap: wrap;
+  }
+  .wrapper section.management .content .row .item ul li {
+    margin-bottom: 30px;
+  }
+  .wrapper section.management .content .title {
+    margin-bottom: 50px;
+    height: 60px;
+  }
+  .wrapper section.page_404 {
+    margin-top: 150px;
+  }
+  .wrapper section.page_404 img {
+    display: block;
+  }
+  .wrapper section.page_404 .content p {
+    font-size: 40px;
+  }
   .wrapper footer {
     background-color: #282828;
     overflow: visible;
@@ -812,6 +860,13 @@
     margin-left: 0;
     width: auto;
     padding: 0;
+  }
+  .wrapper section.search_results .content form {
+    margin-top: 30px;
+  }
+  .wrapper section.search_results .content .results a.item {
+    flex-basis: 100%;
+    max-width: 440px;
   }
   .wrapper section.block_img .content p.sect-title {
     font-size: 40px;
@@ -1253,6 +1308,39 @@
     font-weight: 500;
     line-height: 22px;
   }
+  .wrapper section.management .content .row .item {
+    padding: 30px;
+    padding-bottom: 10px;
+  }
+  .wrapper section.management .content .row .item p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 24px;
+  }
+  .wrapper section.management .content .row .item ul li {
+    font-size: 16px;
+    padding-left: 0;
+    margin-bottom: 11px;
+  }
+  .wrapper section.management .content .row .item ul li::before {
+    display: none;
+  }
+  .wrapper section.management .content .row .item ul li span {
+    font-size: 14px;
+  }
+  .wrapper section.struct .content .block .item {
+    width: 100%;
+  }
+  .wrapper section.page_404 .content {
+    min-height: 350px;
+  }
+  .wrapper section.page_404 .content p {
+    font-size: 30px;
+    text-align: center;
+  }
+  .wrapper section.page_404 img {
+    top: 300px;
+  }
 }
 @media (max-width: 550px) {
   .wrapper .content {
@@ -1341,6 +1429,26 @@
   }
   .wrapper section.news_main .content .navigation .str.right {
     margin-left: 20px;
+  }
+  .wrapper section.search_results .content form .row {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .wrapper section.search_results .content form .row .filter label {
+    margin-left: 0;
+    margin-right: 40px;
+  }
+  .wrapper section.search_results .content form .search_area input {
+    padding: 20px 30px;
+  }
+  .wrapper section.search_results .content form .search_area button {
+    height: 60px;
+  }
+  .wrapper section.search_results .content .results a.item p.one {
+    font-size: 16px;
+  }
+  .wrapper section.search_results .content .results a.item p.two {
+    font-size: 14px;
   }
   .wrapper section.block_img .content .block .right,
   .wrapper section.block_img .content .block .left {
@@ -1479,6 +1587,9 @@
   }
   .wrapper section.about_map .map {
     margin-top: 150px;
+  }
+  .wrapper section.page_404 img {
+    top: 350px;
   }
   .wrapper footer .content .block .col {
     width: 100%;
